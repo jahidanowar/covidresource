@@ -6,15 +6,17 @@
     >
       {{ $i18n.localeProperties.name }}
     </button>
-    <div v-if="showLangs" class="mt-5 text-center">
-      <nuxt-link
-        class="w-full block py-2"
-        v-for="lang in langs"
-        :key="lang.code"
-        :to="switchLocalePath(lang.code)"
-        >{{ lang.name }}</nuxt-link
-      >
-    </div>
+    <transition name="fade">
+      <div v-if="showLangs" class="mt-5 text-center">
+        <nuxt-link
+          class="w-full block py-2"
+          v-for="lang in langs"
+          :key="lang.code"
+          :to="switchLocalePath(lang.code)"
+          >{{ lang.name }}</nuxt-link
+        >
+      </div>
+    </transition>
   </div>
 </template>
 

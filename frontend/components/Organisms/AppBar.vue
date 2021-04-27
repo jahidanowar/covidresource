@@ -75,7 +75,9 @@
         </ul>
       </div>
     </div>
-    <offsite-nav v-if="drawer" />
+    <transition name="fade">
+      <offsite-nav v-if="drawer" />
+    </transition>
   </div>
 </template>
 
