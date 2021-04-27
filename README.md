@@ -6,6 +6,23 @@ An opensource covid resource finder project
 npm i && npm run dev
 ```
 
+## Roadmap
+
+**Backend**
+- [x] Resource API Scafolding
+- [x] Resource Database Setup
+- [ ] Geo Serach resources
+- [ ] Filter by resource category, availability and district
+- [ ] Croud calculation based on resource click
+
+**Frontend**
+- [x] Frontend Scafolding
+- [ ] i18n integeation
+- [ ] Map page
+- [ ] Resource list page
+- [ ] Single resource page
+- [ ] Faq, Support and dev guide page
+
 ## Contributor
 <a href="https://github.com/jahidanowar/covidresource/graphs/contributors">
   <img src="https://contrib.rocks/image?repo=jahidanowar/covidresource" />
