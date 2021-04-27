@@ -1,8 +1,10 @@
-# CovidResource.app
+# CovidResource
 An opensource covid resource finder project
 
 # Setup
+```
 npm i && npm run dev
+```
 
 # Contribution
 If you're new to contributing to Open Source on Github, [this guide](https://guides.github.com/activities/contributing-to-open-source/) can help you get started. 
