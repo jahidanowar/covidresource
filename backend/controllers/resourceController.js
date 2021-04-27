@@ -2,6 +2,7 @@ const catchAsync = require("./../utils/catchAsync");
 const Resource = require("./../models/resourceModel");
 
 exports.index = catchAsync(async (req, res, next) => {
+//   console.log(req.query);
   const resources = await Resource.find({});
   res.status(200).json({ count: resources.length, data: resources });
 });
