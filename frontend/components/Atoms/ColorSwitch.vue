@@ -1,6 +1,6 @@
 <template>
-  <div class="container">
-    {{ $t("welcome") }}
+  <div>
+    <template> </template>
   </div>
 </template>
 
@@ -8,6 +8,4 @@
 export default {};
 </script>
 
-<style>
-
-</style>
+<style></style>
