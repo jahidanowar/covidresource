@@ -18,7 +18,7 @@
 </template>
 
 <script>
-import ColorSwitcher from "./ColorSwitcher.vue";
+import ColorSwitcher from "./../Atoms/ColorSwitcher";
 export default {
   components: { ColorSwitcher }
 };

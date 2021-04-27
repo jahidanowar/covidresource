@@ -69,7 +69,7 @@
           </li>
           <li class="p-5">
             <button @click="toggleDrawer" class="focus:outline-none">
-              <icon-menu />
+              <icon-menu :isOpened="drawer" />
             </button>
           </li>
         </ul>
@@ -82,7 +82,7 @@
 <script>
 import ColorSwitcher from "../Atoms/ColorSwitcher.vue";
 import IconMenu from "../Atoms/IconMenu.vue";
-import OffsiteNav from "../Atoms/OffsiteNav.vue";
+import OffsiteNav from "../Molecules/OffsiteNav.vue";
 import Logo from "./../Atoms/Logo";
 export default {
   components: { Logo, ColorSwitcher, IconMenu, OffsiteNav },
