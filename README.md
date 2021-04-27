@@ -17,7 +17,7 @@ npm i && npm run dev
 
 **Frontend**
 - [x] Frontend Scafolding
-- [ ] i18n integeation
+- [x] i18n integeation
 - [ ] Map page
 - [ ] Resource list page
 - [ ] Single resource page
