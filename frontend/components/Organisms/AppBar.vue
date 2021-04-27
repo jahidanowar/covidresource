@@ -93,7 +93,6 @@ export default {
   },
   methods: {
     toggleDrawer() {
-      console.log("Clicked");
       this.drawer = !this.drawer;
     }
   }
