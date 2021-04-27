@@ -1,13 +1,9 @@
 <template>
-  <div class="container">
+  <div class="">
     {{ $t("welcome") }}
   </div>
 </template>
 
-<script>
-export default {};
-</script>
+<script></script>
 
-<style>
-
-</style>
+<style></style>

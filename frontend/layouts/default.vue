@@ -1,7 +1,7 @@
 <template>
   <div>
     <app-bar />
-    <div class="container mx-auto my-10">
+    <div class="container mx-auto">
       <Nuxt />
     </div>
   </div>
@@ -19,6 +19,6 @@ export default {
 
 <style>
 body {
-  @apply text-gray-700;
+  @apply bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200;
 }
 </style>
