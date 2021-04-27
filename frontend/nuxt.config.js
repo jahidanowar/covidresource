@@ -58,8 +58,8 @@ export default {
 
   i18n: {
     locales: [
-      { code: "en", iso: "en-US", file: "en.js" },
-      { code: "bn", iso: "bn", file: "bn.js" }
+      { code: "en", name: "English", iso: "en-US", file: "en.js" },
+      { code: "bn", name: "বাংলা", iso: "bn", file: "bn.js" }
     ],
     defaultLocale: "en",
     langDir: "~/locales/"

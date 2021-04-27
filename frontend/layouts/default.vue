@@ -11,6 +11,7 @@
 import AppBar from "../components/Organisms/AppBar.vue";
 
 export default {
+  name: 'default',
   components: {
     AppBar
   }

@@ -13,14 +13,18 @@
         <nuxt-link :to="{}">About us</nuxt-link>
       </li>
       <li class="p-5 w-full"><color-switcher /></li>
+      <li class="p-5 w-full">
+        <language-switcher />
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
+import LanguageSwitcher from '../Atoms/LanguageSwitcher.vue';
 import ColorSwitcher from "./../Atoms/ColorSwitcher";
 export default {
-  components: { ColorSwitcher }
+  components: { ColorSwitcher, LanguageSwitcher }
 };
 </script>
 
