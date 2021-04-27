@@ -26,7 +26,7 @@
                   d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                 ></path>
               </svg>
-              map
+              {{ $t("appbar.map") }}
             </nuxt-link>
           </li>
           <li class="p-5">
@@ -45,7 +45,7 @@
                   d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
                 ></path>
               </svg>
-              tiles
+              {{ $t("appbar.tiles") }}
             </nuxt-link>
           </li>
           <li class="p-5">
@@ -64,7 +64,7 @@
                   d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
                 ></path>
               </svg>
-              add
+              {{ $t("appbar.add") }}
             </nuxt-link>
           </li>
           <li class="p-5">

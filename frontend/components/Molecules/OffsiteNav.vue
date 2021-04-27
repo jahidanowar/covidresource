@@ -4,13 +4,13 @@
   >
     <ul>
       <li class="p-5 w-full">
-        <nuxt-link :to="{}">Support</nuxt-link>
+        <nuxt-link :to="{}">{{ $t("drawer.support") }}</nuxt-link>
       </li>
       <li class="p-5 w-full">
-        <nuxt-link :to="{}">Contribute</nuxt-link>
+        <nuxt-link :to="{}">{{ $t("drawer.contribute") }}</nuxt-link>
       </li>
       <li class="p-5 w-full">
-        <nuxt-link :to="{}">About us</nuxt-link>
+        <nuxt-link :to="{}">{{ $t("drawer.about") }}</nuxt-link>
       </li>
       <li class="p-5 w-full"><color-switcher /></li>
       <li class="p-5 w-full">
@@ -21,7 +21,7 @@
 </template>
 
 <script>
-import LanguageSwitcher from '../Atoms/LanguageSwitcher.vue';
+import LanguageSwitcher from "../Atoms/LanguageSwitcher.vue";
 import ColorSwitcher from "./../Atoms/ColorSwitcher";
 export default {
   components: { ColorSwitcher, LanguageSwitcher }
