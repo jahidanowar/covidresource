@@ -15,7 +15,7 @@
           d="M4 6h16M4 12h16M4 18h16"
         ></path>
       </svg>
-      menu
+      {{ $t("appbar.menu") }}
     </template>
     <template v-else>
       <svg
@@ -32,7 +32,7 @@
           d="M6 18L18 6M6 6l12 12"
         ></path>
       </svg>
-      close
+      {{ $t("appbar.close") }}
     </template>
   </div>
 </template>
