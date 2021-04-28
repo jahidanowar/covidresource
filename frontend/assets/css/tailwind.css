@@ -44,3 +44,14 @@ body {
   opacity: 20%;
   transform: translateY(-5px);
 }
+
+/* Form  */
+label {
+  @apply text-sm;
+}
+.form-group {
+  @apply mb-2;
+}
+.form-control {
+  @apply w-full rounded p-2 border dark:border-gray-500 focus:outline-none dark:bg-gray-600 focus:border-gray-400 text-gray-500 dark:text-gray-200;
+}
