@@ -1,9 +1,9 @@
 <template>
-  <div>
+  <nuxt-link to="/">
     <h2 class="text-2xl font-bold">
       <span class="opacity-80">{{ $t("logo.covid") }}</span>{{ $t("logo.resource") }}
     </h2>
-  </div>
+  </nuxt-link>
 </template>
 
 <script>

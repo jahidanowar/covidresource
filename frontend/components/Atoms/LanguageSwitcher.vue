@@ -1,15 +1,15 @@
 <template>
   <div>
     <button
-      class="bg-gray-100 dark:bg-gray-700 py-2 px-4 rounded appearance-none w-full focus:outline-none border border-transparent focus:border-green-300"
+      class="bg-gray-100 dark:bg-gray-700 py-2 px-4 rounded focus:outline-none border border-transparent"
       @click="showLangs = !showLangs"
     >
       {{ $i18n.localeProperties.name }}
     </button>
     <transition name="fade">
-      <div v-if="showLangs" class="mt-5 text-center">
+      <div v-if="showLangs" class="mt-2 sm:text-right px-2">
         <nuxt-link
-          class="w-full block py-2"
+          class="block py-2"
           v-for="lang in langs"
           :key="lang.code"
           :to="switchLocalePath(lang.code)"

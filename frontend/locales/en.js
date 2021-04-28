@@ -4,6 +4,8 @@ export default {
     covid: "Covid",
     resource: "Resource"
   },
+  dark: "Dark",
+  light: "Light",
   serach: "Search",
   appbar: {
     map: "MAP",

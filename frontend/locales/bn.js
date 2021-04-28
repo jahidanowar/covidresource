@@ -4,6 +4,8 @@ export default {
     covid: "Covid",
     resource: "সংস্থান"
   },
+  dark: "অন্ধকার",
+  light: "আলো",
   serach: "অনুসন্ধান করুন",
   appbar: {
     map: "মানচিত্র",
