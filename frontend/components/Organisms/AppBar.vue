@@ -1,11 +1,13 @@
 <template>
   <div>
-    <div class="w-full bg-gray-100 dark:bg-gray-700 fixed sm:relative bottom-0 z-50">
+    <div
+      class="w-full bg-gray-100 dark:bg-gray-700 fixed sm:relative bottom-0 z-50"
+    >
       <div class="container mx-auto flex justify-between items-center">
         <logo class="hidden sm:block" />
         <ul class="w-full sm:w-auto inline-flex justify-around">
           <li class="p-5">
-            <nuxt-link class="flex flex-col items-center text-sm font-semibold" to="/">
+            <menu-item to="/" :title="$t('appbar.map')">
               <svg
                 class="w-6 h-6"
                 fill="none"
@@ -26,11 +28,10 @@
                   d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
                 ></path>
               </svg>
-              {{ $t("appbar.map") }}
-            </nuxt-link>
+            </menu-item>
           </li>
           <li class="p-5">
-            <nuxt-link class="flex flex-col items-center text-sm font-semibold" to="/list">
+            <menu-item to="/" :title="$t('appbar.tiles')">
               <svg
                 class="w-6 h-6"
                 fill="none"
@@ -45,11 +46,10 @@
                   d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"
                 ></path>
               </svg>
-              {{ $t("appbar.tiles") }}
-            </nuxt-link>
+            </menu-item>
           </li>
           <li class="p-5">
-            <nuxt-link class="flex flex-col items-center text-sm font-semibold" to="/add">
+            <menu-item to="/add" :title="$t('appbar.add')">
               <svg
                 class="w-6 h-6"
                 fill="none"
@@ -64,8 +64,7 @@
                   d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z"
                 ></path>
               </svg>
-              {{ $t("appbar.add") }}
-            </nuxt-link>
+            </menu-item>
           </li>
           <li class="p-5">
             <button @click="toggleDrawer" class="focus:outline-none">
@@ -84,10 +83,11 @@
 <script>
 import ColorSwitcher from "../Atoms/ColorSwitcher.vue";
 import IconMenu from "../Atoms/IconMenu.vue";
+import MenuItem from "../Atoms/MenuItem.vue";
 import OffsiteNav from "../Molecules/OffsiteNav.vue";
 import Logo from "./../Atoms/Logo";
 export default {
-  components: { Logo, ColorSwitcher, IconMenu, OffsiteNav },
+  components: { Logo, ColorSwitcher, IconMenu, OffsiteNav, MenuItem },
   data() {
     return {
       drawer: false
