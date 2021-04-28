@@ -1,8 +1,8 @@
 <template>
   <div
-    class="bg-white dark:bg-gray-800 absolute top-0 left-0 h-screen w-full z-40"
+    class="bg-white dark:bg-gray-800 fixed top-0 sm:top-20 left-0 h-screen w-full z-40"
   >
-    <ul>
+    <ul class="container mx-auto sm:text-right mt-5">
       <li class="p-5 w-full">
         <nuxt-link :to="{}">{{ $t("drawer.support") }}</nuxt-link>
       </li>
@@ -13,7 +13,7 @@
         <nuxt-link :to="{}">{{ $t("drawer.about") }}</nuxt-link>
       </li>
       <li class="p-5 w-full"><color-switcher /></li>
-      <li class="p-5 w-full">
+      <li class="p-5 sm:w-1/3 sm:ml-auto">
         <language-switcher />
       </li>
     </ul>

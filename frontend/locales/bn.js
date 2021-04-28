@@ -1,5 +1,6 @@
 export default {
   welcome: "ওহে বিশ্ব",
+  serach: "অনুসন্ধান করুন",
   appbar: {
     map: "মানচিত্র",
     tiles: "তালিকা",

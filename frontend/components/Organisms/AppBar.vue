@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="w-full bg-gray-100 dark:bg-gray-700 fixed bottom-0 z-50">
+    <div class="w-full bg-gray-100 dark:bg-gray-700 fixed sm:relative bottom-0 z-50">
       <div class="container mx-auto flex justify-between items-center">
-        <logo class="hidden" />
-        <ul class="w-full inline-flex justify-around">
+        <logo class="hidden sm:block" />
+        <ul class="w-full sm:w-auto inline-flex justify-around">
           <li class="p-5">
             <nuxt-link class="flex flex-col items-center" to="/">
               <svg

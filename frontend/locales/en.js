@@ -1,5 +1,6 @@
 export default {
   welcome: "Hello World",
+  serach: "Search",
   appbar: {
     map: "map",
     tiles: "tiles",
@@ -9,7 +10,7 @@ export default {
   },
   drawer:{
     support: 'Support',
-    contribute: 'Support',
+    contribute: 'Contribute',
     about: 'About us',
   }
 };

@@ -19,7 +19,4 @@ export default {
 </script>
 
 <style>
-body {
-  @apply bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200;
-}
 </style>
