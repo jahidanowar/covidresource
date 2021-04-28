@@ -5,8 +5,22 @@ const Resource = require("./../models/resourceModel");
  *  Resource Index
  */
 exports.index = catchAsync(async (req, res, next) => {
-  //   console.log(req.query);
-  const resources = await Resource.find({});
+  console.log(req.query);
+  const query = Resource.find({});
+
+  if (req.query.category) {
+    query.where({ category: req.query.category });
+  }
+  if (req.query.state) {
+    query.where({ state: req.query.state });
+  }
+  if (req.query.district) {
+    query.where({ district: req.query.district });
+  }
+  
+  query.sort("createdAt");
+
+  const resources = await query;
   res.status(200).json({ count: resources.length, data: resources });
 });
 
