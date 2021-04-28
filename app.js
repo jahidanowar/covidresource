@@ -2,6 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const erroController = require("./controllers/erroController");
 const app = express();
+const cors = require("cors");
 const resourceRoute = require("./routes/resourceRoute");
 const AppError = require("./utils/AppError");
 
@@ -21,6 +22,12 @@ const AppError = require("./utils/AppError");
   }
 })();
 
+//Cors options
+const corsOption = {
+  origin: "http://localhost:3000",
+};
+//Cors Middleware
+app.use(cors(corsOption));
 
 // JSON poperty Define
 // JSON Inbuilt Middleware
