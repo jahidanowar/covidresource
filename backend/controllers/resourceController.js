@@ -15,6 +15,7 @@ exports.store = catchAsync(async(req, res) => {
   const category = req.body.category ;
   const name = req.body.name ;
   const link = req.body.link ;
+  const phone = req.body.phone;
   const state = req.body.state;
   const district = req.body.district ;
   const address = req.body.address;
@@ -26,6 +27,7 @@ exports.store = catchAsync(async(req, res) => {
     category : category,
     name: name,
     link: link,
+    phone:[phone],
     state: state,
     district: district,
     address: address,
