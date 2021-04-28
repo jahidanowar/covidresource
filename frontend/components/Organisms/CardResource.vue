@@ -5,7 +5,7 @@
     </div>
     <div class="flex flex-col lg:flex-row justify-between lg:items-center">
       <div class="info">
-        <h2 class="text-3xl mb-2 font-semibold">{{ name }}</h2>
+        <h2 class="text-2xl mb-2 font-semibold">{{ name }}</h2>
         <div class="address flex items-center opacity-70 mb-4">
           <svg
             class="w-5 h-5 mr-2"
@@ -74,7 +74,7 @@
             d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
           ></path>
         </svg>
-        <p class="text-sm">{{ date }}</p>
+        <p class="text-sm">{{ date | formatDate }}</p>
       </div>
     </div>
   </div>

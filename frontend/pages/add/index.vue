@@ -77,7 +77,7 @@ export default {
     async addResource() {
       try {
         const resource = await this.$axios.post("/resource", this.resourceForm);
-        console.log(resource);
+        // console.log(resource);
       } catch (error) {
         console.log(error.response.data);
       }

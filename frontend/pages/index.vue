@@ -30,8 +30,12 @@ export default {
   components: { CardResource },
   name: "index",
   async fetch() {
-    const resource = await this.$axios.$get("resource");
-    this.$store.commit("resource/SET_RESOURCES", resource.data);
+    try {
+      const resource = await this.$axios.$get("resource");
+      this.$store.commit("resource/SET_RESOURCES", resource.data);
+    } catch (error) {
+      console.log(error);
+    }
   },
   computed: {
     resources() {
