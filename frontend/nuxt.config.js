@@ -10,7 +10,37 @@ export default {
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "" }
     ],
-    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
+    link: [
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+      {
+        rel: "preload",
+        as: "font",
+        type: "font/woff2",
+        crossorigin: true,
+        href: "./assets/fonts/archia/archia-regular-webfont.woff2"
+      },
+      {
+        rel: "preload",
+        as: "font",
+        type: "font/woff2",
+        crossorigin: true,
+        href: "./assets/fonts/archia/archia-medium-webfont.woff2"
+      },
+      {
+        rel: "preload",
+        as: "font",
+        type: "font/woff2",
+        crossorigin: true,
+        href: "./assets/fonts/archia/archia-semibold-webfont.woff2"
+      },
+      {
+        rel: "preload",
+        as: "font",
+        type: "font/woff2",
+        crossorigin: true,
+        href: "./assets/fonts/archia/archia-bold-webfont.woff2"
+      }
+    ]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css

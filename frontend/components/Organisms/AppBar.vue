@@ -5,7 +5,7 @@
         <logo class="hidden sm:block" />
         <ul class="w-full sm:w-auto inline-flex justify-around">
           <li class="p-5">
-            <nuxt-link class="flex flex-col items-center" to="/">
+            <nuxt-link class="flex flex-col items-center text-sm font-semibold" to="/">
               <svg
                 class="w-6 h-6"
                 fill="none"
@@ -30,7 +30,7 @@
             </nuxt-link>
           </li>
           <li class="p-5">
-            <nuxt-link class="flex flex-col items-center" to="/list">
+            <nuxt-link class="flex flex-col items-center text-sm font-semibold" to="/list">
               <svg
                 class="w-6 h-6"
                 fill="none"
@@ -49,7 +49,7 @@
             </nuxt-link>
           </li>
           <li class="p-5">
-            <nuxt-link class="flex flex-col items-center" to="/add">
+            <nuxt-link class="flex flex-col items-center text-sm font-semibold" to="/add">
               <svg
                 class="w-6 h-6"
                 fill="none"

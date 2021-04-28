@@ -1,16 +1,20 @@
 export default {
   welcome: "Hello World",
+  logo: {
+    covid: "Covid",
+    resource: "Resource"
+  },
   serach: "Search",
   appbar: {
-    map: "map",
-    tiles: "tiles",
-    add: "add",
-    menu: "menu",
-    close: "close"
+    map: "MAP",
+    tiles: "LIST",
+    add: "ADD",
+    menu: "MENU",
+    close: "CLOSE"
   },
-  drawer:{
-    support: 'Support',
-    contribute: 'Contribute',
-    about: 'About us',
+  drawer: {
+    support: "Support",
+    contribute: "Contribute",
+    about: "About us"
   }
 };

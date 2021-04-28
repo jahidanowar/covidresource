@@ -2,13 +2,43 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Fonts  */
+@font-face {
+  font-family: "Archia";
+  src: local("Archia"),
+    url("./../fonts/archia/archia-semibold-webfont.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Archia";
+  src: local("Archia"),
+    url("./../fonts/archia/archia-medium-webfont.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Archia";
+  src: local("Archia"),
+    url("./../fonts/archia/archia-bold-webfont.woff2") format("woff2");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 body {
+  font-family: "Archia", "Noto Sans", sans-serif;
   @apply bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-200;
 }
 
 /* Tranisitions */
-.fade-enter-active, .fade-leave-active {
-  transition: all .3s ease;
+.fade-enter-active,
+.fade-leave-active {
+  transition: all 0.3s ease;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 20%;

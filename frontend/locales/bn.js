@@ -1,5 +1,9 @@
 export default {
   welcome: "ওহে বিশ্ব",
+  logo: {
+    covid: "Covid",
+    resource: "সংস্থান"
+  },
   serach: "অনুসন্ধান করুন",
   appbar: {
     map: "মানচিত্র",
