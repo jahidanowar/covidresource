@@ -1,7 +1,8 @@
 const catchAsync = require("./../utils/catchAsync");
 const Resource = require("./../models/resourceModel");
 
-/*
+/** 
+ *  Resource Index
 */
 exports.index = catchAsync(async (req, res, next) => {
 //   console.log(req.query);
@@ -9,7 +10,8 @@ exports.index = catchAsync(async (req, res, next) => {
   res.status(200).json({ count: resources.length, data: resources });
 });
 
-/*
+/** 
+ * Store a single resource
 */
 exports.store = catchAsync(async(req, res) => {
   const category = req.body.category ;
@@ -41,8 +43,9 @@ exports.store = catchAsync(async(req, res) => {
   res.status(200).json({resource: source});
 });
 
-/*
-*/
+/**
+ * Shows Single Resource
+ */
 exports.show =catchAsync(async(req, res) => {
   const resourceId = req.params.slug ;
 
@@ -50,7 +53,8 @@ exports.show =catchAsync(async(req, res) => {
   res.status(200).json({data: resource});
 });
 
-/* 
+/**
+ *  Upadte Views in a Resource
 */
 exports.update = catchAsync(async(req, res) => {
   const resourceId = req.params.slug ;
