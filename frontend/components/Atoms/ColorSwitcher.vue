@@ -20,7 +20,7 @@
       </div>
       <div v-else class="flex items-center sm:flex-row-reverse">
         <svg
-          class="w-6 h-6 cursor-pointer mr-2 sm:ml-2"
+          class="w-6 h-6 cursor-pointer mr-2 sm:ml-2 text-blue-800"
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
