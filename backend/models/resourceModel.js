@@ -27,9 +27,13 @@ const resourceSchema = new Schema({
     type: { type: String, enum: ["Point"] },
     coordinates: [Number],
   },
-  views:{
-    type:Number,
-    default : 0
+  views: {
+    type: Number,
+    default: 0,
+  },
+  verified: {
+    type: Boolean,
+    default: false,
   },
   createdAt: {
     type: Date,
@@ -37,6 +41,5 @@ const resourceSchema = new Schema({
   },
 });
 resourceSchema.index({ location: "2dsphere" });
-
 
 module.exports = mongoose.model("Resource", resourceSchema);
