@@ -1,21 +1,25 @@
 export const state = () => ({
-  serachParam: {
-    state: "",
-    district: "",
-    category: ""
-  }
+  rstate: "",
+  district: "",
+  category: ""
 });
 
 export const getters = {
-  getSerachParam: state => state.serachParam,
+  getState: state => state.rstate,
+  getDistrict: state => state.district,
+  getCategory: state => state.category
 };
 
 export const mutations = {
-  SET_SEARCH(state, payload) {
-    state.serachParam = payload;
+  SET_STATE(state, payload) {
+    state.rstate = payload;
+  },
+  SET_DISTRICT(state, payload) {
+    state.district = payload;
+  },
+  SET_CATEGORY(state, payload) {
+    state.category = payload;
   }
 };
 
-export const actions = {
-
-};
+export const actions = {};

@@ -29,6 +29,7 @@ export default {
     state: "State",
     district: "District",
     address: "Address",
-    add: "Add Resource"
+    add: "Add Resource",
+    serachCategory: "What are you looking for"
   }
 };

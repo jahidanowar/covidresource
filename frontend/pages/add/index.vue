@@ -5,17 +5,7 @@
     <form @submit.prevent="addResource" class="mt-5" autocomplete="off">
       <div class="form-group">
         <label for="category">{{ $t("addResource.category") }}</label>
-        <select
-          class="form-control appearance-none"
-          v-model="resourceForm.category"
-        >
-          <option value="0">Select Category</option>
-          <option value="Oxygen">Oxygen</option>
-          <option value="Oxygen Refil">Oxygen Refil</option>
-          <option value="Helpline">Helpline</option>
-          <option value="Ambulance">Ambulance</option>
-          <option value="Hospital">Hospital</option>
-        </select>
+        <category-select v-model="resourceForm.category" />
       </div>
       <div class="form-group">
         <label for="name">{{ $t("addResource.name") }}</label>
@@ -27,9 +17,9 @@
       </div>
       <div class="form-group">
         <label for="state">{{ $t("addResource.state") }} </label>
-        <vue-select @selected="stateSelected" :data="states" />
+        <vue-select v-model="resourceForm.state" :data="states" />
       </div>
-      <div class="form-group" v-if="resourceForm.state.length > 0">
+      <div class="form-group">
         <label for="district">{{ $t("addResource.district") }}</label>
         <vue-select v-model="resourceForm.district" :data="districts" />
       </div>
@@ -51,9 +41,10 @@
 </template>
 
 <script>
+import CategorySelect from '../../components/Atoms/CategorySelect.vue';
 import VueSelect from "../../components/Molecules/VueSelect.vue";
 export default {
-  components: { VueSelect },
+  components: { VueSelect, CategorySelect },
   name: "Add",
   data() {
     return {
@@ -73,9 +64,10 @@ export default {
       return this.$store.getters["location/getStates"].map(item => item.state);
     },
     districts() {
-      return this.$store.getters["location/getStates"].filter(
+      let state = this.$store.getters["location/getStates"].filter(
         item => item.state === this.resourceForm.state
-      )[0].districts;
+      );
+      return state.length == 1 ? state[0].districts : [];
     }
   },
   methods: {
@@ -97,8 +89,8 @@ export default {
         this.resourceForm.long = position.coords.longitude;
       });
     },
-    stateSelected(v){
-      this.resourceForm.state = v
+    stateSelected(v) {
+      this.resourceForm.state = v;
     }
   },
   mounted() {

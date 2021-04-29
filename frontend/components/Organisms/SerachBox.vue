@@ -4,20 +4,18 @@
       <div class="flex flex-col">
         <div class="form-group">
           <label for="state">{{ $t("addResource.state") }}</label>
-          <vue-select @selected="stateSelected" :data="states" />
-        </div>
-        <div v-if="serachQuery.state.length > 0" class="form-group">
-          <label for="district">{{ $t("addResource.district") }}</label>
-          <vue-select :data="districts" v-model="serachQuery.district" />
+          <vue-select v-model="state" :data="states" />
         </div>
         <div class="form-group">
-          <button
-            type="submit"
-            class="btn-primary mt-2"
-            :disabled="
-              serachQuery.state.length < 1 || serachQuery.district.length < 1
-            "
-          >
+          <label for="district">{{ $t("addResource.district") }}</label>
+          <vue-select :data="districts" v-model="district" />
+        </div>
+        <div class="form-group">
+          <label for="category">{{ $t("addResource.serachCategory") }}</label>
+          <category-select v-model="category" />
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn-primary mt-2">
             Search
           </button>
         </div>
@@ -27,38 +25,64 @@
 </template>
 
 <script>
+import CategorySelect from "../Atoms/CategorySelect.vue";
 import VueSelect from "./../Molecules/VueSelect";
 export default {
-  components: { VueSelect },
+  components: { VueSelect, CategorySelect },
   name: "index",
-  data() {
-    return {
-      serachQuery: {
-        state: "",
-        district: "",
-        category: ""
-      }
-    };
-  },
   computed: {
+    state: {
+      set(d) {
+        this.$store.commit("search/SET_STATE", d);
+      },
+      get() {
+        return this.$store.getters["search/getState"];
+      }
+    },
+    district: {
+      set(d) {
+        this.$store.commit("search/SET_DISTRICT", d);
+      },
+      get() {
+        return this.$store.getters["search/getDistrict"];
+      }
+    },
+    category: {
+      set(d) {
+        this.$store.commit("search/SET_CATEGORY", d);
+      },
+      get() {
+        return this.$store.getters["search/getCategory"];
+      }
+    },
+
     states() {
       return this.$store.getters["location/getStates"].map(item => item.state);
     },
     districts() {
       let state = this.$store.getters["location/getStates"].filter(
-        item => item.state === this.serachQuery.state
+        item => item.state === this.state
       );
-      return state ? state[0].districts : [];
+      return state.length == 1 ? state[0].districts : [];
     }
   },
   methods: {
-    stateSelected(v) {
-      this.serachQuery.state = v;
-    },
-    handleSearch() {
-      this.$store.commit("search/SET_SEARCH", this.serachQuery);
-      this.$router.replace({ path: "/resources" });
+    async handleSearch() {
+      try {
+        const resources = await this.$axios.$get(
+          `/resource?category=${this.category}&state=${this.state}&district=${this.district}`
+        );
+        this.$store.commit("resource/SET_RESOURCES", resources.data);
+      } catch (error) {
+        console.log(error);
+      }
+      if (this.$route.path !== "/resources") {
+        this.$router.replace({ path: "/resources" });
+      }
     }
+  },
+  mounted() {
+    this.$store.getters["search/getSearchParam"];
   }
 };
 </script>

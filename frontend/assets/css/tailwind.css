@@ -56,5 +56,5 @@ label {
   @apply w-full rounded p-2 border dark:border-gray-500 focus:outline-none dark:bg-gray-600 focus:border-gray-400 text-gray-500 dark:text-gray-200;
 }
 .btn-primary {
-  @apply p-2 rounded bg-green-400 w-full text-white;
+  @apply p-2 rounded bg-green-400 w-full text-white focus:outline-none;
 }
