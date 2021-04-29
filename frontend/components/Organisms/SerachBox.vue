@@ -1,7 +1,7 @@
 <template>
   <div>
     <form action="" class="mt-5" @submit.prevent="handleSearch">
-      <div class="flex flex-col">
+      <div class="flex flex-col sm:flex-row sm:items-end justify-between">
         <div class="form-group">
           <label for="state">{{ $t("addResource.state") }}</label>
           <vue-select v-model="state" :data="states" />
