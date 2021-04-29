@@ -1,25 +1,24 @@
 <template>
   <div class="sm:py-5 px-4 sm:px-0">
     <div class="my-8">
-      <input
-        type="text"
-        class="w-full shadow-md p-4 rounded dark:bg-gray-700 focus:shadow-lg focus:outline-none"
-        :placeholder="$t('serach')"
-      />
-    </div>
-    <div class="grid sm:grid-cols-2 gap-5">
-      <card-resource
-        v-for="(resource, i) in resources"
-        :key="i"
-        :name="resource.name"
-        :phone="resource.phone"
-        :address="
-          resource.address + ', ' + resource.district + ', ' + resource.state
-        "
-        :date="resource.createdAt"
-        :category="resource.category"
-        :status="resource.verified ? 'Verified' : 'Not Verified'"
-      />
+      <h1 class="text-4xl">Search</h1>
+      <form action="" class="mt-5">
+        <div class="flex">
+          <div class="mr-2">
+            <select name="state" id="" class="form-control appearance-none">
+              <option value="west Bengal">West Bengal</option>
+            </select>
+          </div>
+          <div class="mr-2">
+            <select name="district" id="" class="form-control appearance-none">
+              <option value="Murshidabad">Murshidabad</option>
+            </select>
+          </div>
+          <div class="mr-2">
+            <button type="submit" class="btn-primary">Search</button>
+          </div>
+        </div>
+      </form>
     </div>
   </div>
 </template>
@@ -37,11 +36,11 @@ export default {
       console.log(error);
     }
   },
-  computed: {
-    resources() {
-      return this.$store.getters["resource/getResources"];
-    }
-  }
+  data() {
+    return {
+      serachQuery: ""
+    };
+  },
 };
 </script>
 
