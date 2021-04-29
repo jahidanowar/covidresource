@@ -1,8 +1,10 @@
 <template>
   <nuxt-link
     class="flex items-center"
-    :class="[type === 'navlink' ? 'flex-row sm:flex-row-reverse' : 'flex-col text-sm']"
-    :to="to"
+    :class="[
+      type === 'navlink' ? 'flex-row sm:flex-row-reverse' : 'flex-col text-sm'
+    ]"
+    :to="localePath(to)"
   >
     <slot></slot>
     {{ title }}

@@ -2,7 +2,7 @@
   <div class="my-5 px-4 sm:px-0">
     <h1 class="text-3xl mb-2">{{ $t("addResource.title") }}</h1>
     <p class="opacity-70">{{ $t("addResource.subtitle") }}</p>
-    <form @submit.prevent="addResource" class="mt-5">
+    <form @submit.prevent="addResource" class="mt-5" autocomplete="off">
       <div class="form-group">
         <label for="category">{{ $t("addResource.category") }}</label>
         <select

@@ -8,6 +8,7 @@ export default {
   light: "Light",
   serach: "Search",
   appbar: {
+    home: "HOME",
     map: "MAP",
     tiles: "LIST",
     add: "ADD",

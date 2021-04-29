@@ -48,7 +48,7 @@ export default {
   computed: {
     resources() {
       return this.$store.getters["resource/getResources"].filter(resource =>
-        resource.address.toLowerCase().includes(this.serachQuery)
+        resource.address.toLowerCase().includes(this.serachQuery.toLowerCase())
       );
     }
   }
