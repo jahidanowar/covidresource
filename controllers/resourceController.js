@@ -18,7 +18,7 @@ exports.index = catchAsync(async (req, res, next) => {
     query.where({ district: req.query.district });
   }
   
-  query.sort("createdAt");
+  query.sort('-_id');
 
   const resources = await query;
   res.status(200).json({ count: resources.length, data: resources });
