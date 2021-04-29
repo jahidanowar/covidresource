@@ -7,10 +7,11 @@
       v-model="query"
       @input="handleInput"
       ref="input"
+      autocomplete="off"
     />
     <div v-if="showOptions">
       <ul
-        class="bg-white dark:bg-gray-500 rounded absolute w-full shadow-xl max-h-48 overflow-y-scroll"
+        class="bg-white dark:bg-gray-500 rounded absolute w-full shadow-xl max-h-48 overflow-y-scroll z-50"
       >
         <li
           v-for="(item, i) in searchResults"
