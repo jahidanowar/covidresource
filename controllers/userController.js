@@ -1,33 +1,32 @@
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
+const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
 const catchAsync = require("./../utils/catchAsync");
 
 /*
-*/
-exports.register =catchAsync(async (req, res, next) =>{
-    const email = req.body.email ;
-    const username = req.body.username;
-    const password = req.body.password ;
-    const hash = await bcrypt.hash(password , 10);
+ */
+exports.register = catchAsync(async (req, res, next) => {
+  const email = req.body.email;
+  const username = req.body.username;
+  const password = req.body.password;
+  const hash = await bcrypt.hash(password, 10);
+  const user = new User({
+    email: email,
+    username: username,
+    password: hash,
+  });
 
-    const user = new User({
-        email:email,
-        username: username,
-        password:hash
-    });
-    
-    const register = await user.save();
-    res.status(201).json({message:'Registered!', data: register});
+  const register = await user.save();
+  res.status(201).json({ message: "Registered!", data: register });
 });
 
 /*
-*/
-exports.login = catchAsync(async (req, res, next) =>{
-    const email = req.body.email ;
-    const password = req.body.password ;
+ */
+exports.login = catchAsync(async (req, res, next) => {
+  const email = req.body.email;
+  const password = req.body.password;
 
-    const user = await User.findOne({ email: email });
+  const user = await User.findOne({ email: email });
   if (!user) {
     res.status(404).json({
       message: "Email does not exist!",

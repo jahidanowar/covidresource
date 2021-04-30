@@ -47,6 +47,11 @@ const resourceSchema = new Schema({
     type: Date,
     default: false,
   },
+  status: {
+    type: String,
+    enum: ["published", "pending"],
+    default: "pending",
+  },
   createdAt: {
     type: Date,
     default: new Date(),
