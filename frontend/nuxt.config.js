@@ -70,7 +70,8 @@ export default {
   i18n: {
     locales: [
       { code: "en", name: "English", iso: "en-US", file: "en.js" },
-      { code: "bn", name: "বাংলা", iso: "bn", file: "bn.js" }
+      { code: "bn", name: "বাংলা", iso: "bn", file: "bn.js" },
+      { code: "hi", name: "हिंदी", iso: "hi", file: "hi.js" }
     ],
     defaultLocale: "en",
     langDir: "~/locales/"
