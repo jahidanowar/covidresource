@@ -17,7 +17,7 @@ exports.index = catchAsync(async (req, res, next) => {
   if (req.query.district) {
     query.where({ district: req.query.district });
   }
-  
+
   query.where({ status: "published" });
 
   query.sort("-_id").limit(20);
@@ -37,9 +37,10 @@ exports.store = catchAsync(async (req, res) => {
   const state = req.body.state;
   const district = req.body.district;
   const address = req.body.address;
-  const views = req.body.views;
   const long = req.body.long;
   const lat = req.body.lat;
+  const info = req.body.info;
+  const source = req.body.source;
 
   const resource = new Resource({
     category: category,
@@ -49,14 +50,15 @@ exports.store = catchAsync(async (req, res) => {
     state: state,
     district: district,
     address: address,
-    views: views,
+    info: info,
+    link: source,
     location: {
       type: "Point",
       coordinates: [long, lat],
     },
   });
-  const source = await resource.save();
-  res.status(200).json({ resource: source });
+  const createdResource = await resource.save();
+  res.status(201).json({ createdResource });
 });
 
 /**

@@ -8,9 +8,13 @@ const resourceSchema = new Schema({
   },
   name: {
     type: String,
+    trim: true,
     required: [true, "Name is required"],
   },
-  phone: [String],
+  phone: {
+    type: Array,
+    required: [true, "Phone is required"]
+  },
   link: {
     type: String,
   },
@@ -45,7 +49,6 @@ const resourceSchema = new Schema({
   },
   varifiedAt: {
     type: Date,
-    default: false,
   },
   status: {
     type: String,
