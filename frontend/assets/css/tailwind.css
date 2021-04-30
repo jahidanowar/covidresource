@@ -34,6 +34,9 @@ body {
   font-family: "Archia", "Noto Sans", sans-serif;
   @apply bg-gray-50 dark:bg-gray-800 text-gray-700 dark:text-gray-200;
 }
+.container {
+  max-width: 1280px;
+}
 
 /* Tranisitions */
 .fade-enter-active,
