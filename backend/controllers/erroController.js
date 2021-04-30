@@ -3,8 +3,9 @@ const handleValidationErrorDB = (err, res) => {
 };
 
 module.exports = (err, req, res, next) => {
-  if (err.name === "ValidationError") handleValidationErrorDB(err, res);
-
+  if (err.name === "ValidationError") {
+    return handleValidationErrorDB(err, res);
+  }
   res.status(err.statusCode || 500).json({
     status: err.status || "error",
     message: err.message,

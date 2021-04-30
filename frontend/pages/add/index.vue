@@ -9,19 +9,59 @@
       </div>
       <div class="form-group">
         <label for="name">{{ $t("addResource.name") }}</label>
-        <input type="text" v-model="resourceForm.name" class="form-control" />
+        <input
+          type="text"
+          v-model="resourceForm.name"
+          class="form-control"
+          :class="{ 'border-red-300': errors && errors.name }"
+          required
+        />
+        <span
+          class="form-error text-xs text-red-400"
+          v-if="errors && errors.name"
+          >{{ errors.name.message }}</span
+        >
       </div>
       <div class="form-group">
         <label for="phone">{{ $t("addResource.phone") }}</label>
-        <input type="tel" v-model="resourceForm.phone" class="form-control" />
+        <input
+          type="tel"
+          v-model="resourceForm.phone"
+          class="form-control"
+          :class="{ 'border-red-300': errors && errors.phone }"
+          required
+        />
+        <span
+          class="form-error text-xs text-red-400"
+          v-if="errors && errors.phone"
+          >{{ errors.phone.message }}</span
+        >
       </div>
       <div class="form-group">
         <label for="state">{{ $t("addResource.state") }} </label>
-        <vue-select v-model="resourceForm.state" :data="states" />
+        <vue-select
+          v-model="resourceForm.state"
+          :data="states"
+          :errorClass="{ 'border-red-300': errors && errors.state }"
+        />
+        <span
+          class="form-error text-xs text-red-400"
+          v-if="errors && errors.state"
+          >{{ errors.state.message }}</span
+        >
       </div>
       <div class="form-group">
         <label for="district">{{ $t("addResource.district") }}</label>
-        <vue-select v-model="resourceForm.district" :data="districts" />
+        <vue-select
+          v-model="resourceForm.district"
+          :data="districts"
+          :errorClass="{ 'border-red-300': errors && errors.district }"
+        />
+        <span
+          class="form-error text-xs text-red-400"
+          v-if="errors && errors.district"
+          >{{ errors.district.message }}</span
+        >
       </div>
       <div class="form-group">
         <label for="address">{{ $t("addResource.address") }}</label>
@@ -37,7 +77,18 @@
       </div>
       <div class="form-group">
         <label for="source">{{ $t("addResource.source") }}</label>
-        <input type="text" v-model="resourceForm.source" class="form-control" />
+        <input
+          type="text"
+          v-model="resourceForm.source"
+          class="form-control"
+          :class="{ 'border-red-300': errors && errors.link }"
+          required
+        />
+        <span
+          class="form-error text-xs text-red-400"
+          v-if="errors && errors.link"
+          >{{ errors.link.message }}</span
+        >
       </div>
       <div class="form-group">
         <button type="submit" class="btn-primary mt-2">
@@ -66,7 +117,8 @@ export default {
         long: "",
         source: "",
         info: ""
-      }
+      },
+      errors: null
     };
   },
   computed: {
@@ -89,7 +141,7 @@ export default {
           this.$router.replace({ path: "/" });
         }
       } catch (error) {
-        console.log(error.response.data);
+        this.errors = error.response.data;
       }
     },
     getLocation() {

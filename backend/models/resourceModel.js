@@ -17,6 +17,7 @@ const resourceSchema = new Schema({
   },
   link: {
     type: String,
+    required: [true, "Source link is required"]
   },
   state: {
     type: String,

@@ -8,6 +8,7 @@
       ref="input"
       autocomplete="off"
       :value="value"
+      :class="errorClass"
     />
     <div v-if="showOptions">
       <ul
@@ -35,8 +36,9 @@ export default {
     },
     value: {
       type: String,
-      required: false,
+      required: false
     },
+    errorClass: Object
   },
   data() {
     return {
@@ -77,7 +79,6 @@ export default {
 
     clickedOutside() {
       // this.showOptions = false;
-
       // if (!this.chosenOption) {
       //   this.$emit("input", "");
       // }
