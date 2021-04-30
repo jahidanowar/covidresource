@@ -6,7 +6,8 @@ export default {
   },
   dark: "Dark",
   light: "Light",
-  serach: "Search",
+  search: "Search",
+  searching: "Searching",
   appbar: {
     home: "HOME",
     map: "MAP",

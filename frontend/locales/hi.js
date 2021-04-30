@@ -6,7 +6,8 @@ export default {
   },
   dark: "डार्क मोड",
   light: "लाइट मोड",
-  serach: "खोजें",
+  search: "खोजें",
+  searching: "Searching",
   appbar: {
     home: "होम",
     map: "नक्शा",

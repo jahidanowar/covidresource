@@ -6,7 +6,8 @@ export default {
   },
   dark: "অন্ধকার",
   light: "আলো",
-  serach: "অনুসন্ধান করুন",
+  search: "অনুসন্ধান করুন",
+  searching: "খুঁজছি",
   appbar: {
     home: "প্রথম পৃষ্ঠা",
     map: "মানচিত্র",
