@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 const User = require("../models/userModel");
 const catchAsync = require("./../utils/catchAsync");
 
@@ -26,10 +27,36 @@ exports.login = catchAsync(async (req, res, next) =>{
     const email = req.body.email ;
     const password = req.body.password ;
 
-    const user = await User.findOne({email : email});
-    const match = await bcrypt.compare(password, user.password);
-    if(match){
-        res.status(200).json({message:'Login successfull !'});
+    const user = await User.findOne({ email: email });
+  if (!user) {
+    res.status(404).json({
+      message: "Email does not exist!",
+    });
+  } else {
+    const isMatch = await bcrypt.compare(password, user.password);
+    if (!isMatch) {
+      res.status(422).json({
+        message: "Invalid Email & Password!",
+      });
+    } else {
+      const token = jwt.sign(
+        {
+          email: user.email,
+          userId: user._id,
+        },
+        process.env.JWT_KEY,
+        {
+          expiresIn: "10h",
+        }
+      );
+      res.status(200).json({
+        token: token,
+        user: {
+          _id: user._id,
+          email: user.email,
+          type: user.type,
+        },
+      });
     }
-    
+  }
 });
