@@ -57,6 +57,9 @@ export default {
       theme_color: "#10B981",
       description: "A crowd-sourced platform to find verfied covid resources"
     },
+    icon: {
+      fileName: "icon.png"
+    },
     manifest: {
       lang: "en",
       name: "CovidResources",
