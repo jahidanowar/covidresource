@@ -1,5 +1,6 @@
 {
-  "name": "CovidResource",
+  "name": "covidresource",
+  "description": "A crowd-sourced platform to find verfied covid resources",
   "version": "1.0.0",
   "private": true,
   "scripts": {
