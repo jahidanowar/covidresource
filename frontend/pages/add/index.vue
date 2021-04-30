@@ -90,20 +90,24 @@
           >{{ errors.link.message }}</span
         >
       </div>
-      <div class="form-group">
+      <div class="form-group mb-4">
         <button type="submit" class="btn-primary mt-2">
           {{ $t("addResource.add") }}
         </button>
       </div>
+      <transition name="fade">
+        <alert v-if="success" :message="success" />
+      </transition>
     </form>
   </div>
 </template>
 
 <script>
+import Alert from "../../components/Atoms/Alert.vue";
 import CategorySelect from "../../components/Atoms/CategorySelect.vue";
 import VueSelect from "../../components/Molecules/VueSelect.vue";
 export default {
-  components: { VueSelect, CategorySelect },
+  components: { VueSelect, CategorySelect, Alert },
   name: "Add",
   data() {
     return {
@@ -118,7 +122,8 @@ export default {
         source: "",
         info: ""
       },
-      errors: null
+      errors: null,
+      success: null
     };
   },
   computed: {
@@ -138,7 +143,12 @@ export default {
         const resource = await this.$axios.post("/resource", this.resourceForm);
         // console.log(resource);
         if (resource) {
-          this.$router.replace({ path: "/" });
+          this.success =
+            "Thank you 🙂, The resource lead has been added to queue for review";
+          this.resetForm();
+          setTimeout(() => {
+            this.success = null;
+          }, 5000);
         }
       } catch (error) {
         this.errors = error.response.data;
@@ -151,8 +161,12 @@ export default {
         this.resourceForm.long = position.coords.longitude;
       });
     },
-    stateSelected(v) {
-      this.resourceForm.state = v;
+    resetForm() {
+      this.resourceForm.category = 0;
+      this.resourceForm.name = this.resourceForm.address = this.resourceForm.district = this.resourceForm.state =
+        "";
+      this.resourceForm.source = this.resourceForm.info = this.resourceForm.phone =
+        "";
     }
   },
   mounted() {
