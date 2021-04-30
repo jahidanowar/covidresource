@@ -46,7 +46,7 @@ exports.store = catchAsync(async (req, res) => {
     category: category,
     name: name,
     link: link,
-    phone: phone,
+    phone: [phone],
     state: state,
     district: district,
     address: address,
