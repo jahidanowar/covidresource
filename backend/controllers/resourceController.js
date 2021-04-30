@@ -18,7 +18,9 @@ exports.index = catchAsync(async (req, res, next) => {
     query.where({ district: req.query.district });
   }
   
-  query.sort('-_id');
+  query.where({ status: "published" });
+
+  query.sort("-_id").limit(20);
 
   const resources = await query;
   res.status(200).json({ count: resources.length, data: resources });

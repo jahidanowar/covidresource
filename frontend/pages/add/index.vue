@@ -32,6 +32,14 @@
         />
       </div>
       <div class="form-group">
+        <label for="info">{{ $t("addResource.info") }}</label>
+        <input type="text" v-model="resourceForm.info" class="form-control" />
+      </div>
+      <div class="form-group">
+        <label for="source">{{ $t("addResource.source") }}</label>
+        <input type="text" v-model="resourceForm.source" class="form-control" />
+      </div>
+      <div class="form-group">
         <button type="submit" class="btn-primary mt-2">
           {{ $t("addResource.add") }}
         </button>
@@ -41,7 +49,7 @@
 </template>
 
 <script>
-import CategorySelect from '../../components/Atoms/CategorySelect.vue';
+import CategorySelect from "../../components/Atoms/CategorySelect.vue";
 import VueSelect from "../../components/Molecules/VueSelect.vue";
 export default {
   components: { VueSelect, CategorySelect },
@@ -55,7 +63,9 @@ export default {
         district: "",
         state: "",
         lat: "",
-        long: ""
+        long: "",
+        source: "",
+        info: ""
       }
     };
   },
