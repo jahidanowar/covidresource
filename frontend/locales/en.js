@@ -30,6 +30,6 @@ export default {
     district: "District",
     address: "Address",
     add: "Add Resource",
-    serachCategory: "What are you looking for"
+    searchCategory: "What are you looking for"
   }
 };

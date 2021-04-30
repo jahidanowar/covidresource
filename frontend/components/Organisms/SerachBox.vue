@@ -11,7 +11,7 @@
           <vue-select :data="districts" v-model="district" />
         </div>
         <div class="form-group">
-          <label for="category">{{ $t("addResource.serachCategory") }}</label>
+          <label for="category">{{ $t("addResource.searchCategory") }}</label>
           <category-select v-model="category" />
         </div>
         <div class="form-group">
