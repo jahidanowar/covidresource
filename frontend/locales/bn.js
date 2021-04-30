@@ -2,7 +2,7 @@ export default {
   welcome: "ওহে বিশ্ব",
   logo: {
     covid: "Covid",
-    resource: "সংস্থান"
+    resource: " সংস্থান"
   },
   dark: "অন্ধকার",
   light: "আলো",
