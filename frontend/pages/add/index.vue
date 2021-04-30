@@ -78,7 +78,7 @@
       <div class="form-group">
         <label for="source">{{ $t("addResource.source") }}</label>
         <input
-          type="text"
+          type="url"
           v-model="resourceForm.source"
           class="form-control"
           :class="{ 'border-red-300': errors && errors.link }"
