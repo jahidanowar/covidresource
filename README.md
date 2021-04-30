@@ -11,15 +11,15 @@ npm i && npm run dev
 **Backend**
 - [x] Resource API Scafolding
 - [x] Resource Database Setup
+- [x] Filter by resource category, availability and district
 - [ ] Geo Serach resources
-- [ ] Filter by resource category, availability and district
 - [ ] Croud calculation based on resource click
 
 **Frontend**
 - [x] Frontend Scafolding
 - [x] i18n integeation
+- [x] Resource list page
 - [ ] Map page
-- [ ] Resource list page
 - [ ] Single resource page
 - [ ] Faq, Support and dev guide page
 

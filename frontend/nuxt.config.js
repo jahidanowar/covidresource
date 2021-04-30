@@ -7,11 +7,13 @@ export default {
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "A crowd-sourced platform to find verfied covid resources" }
+      {
+        hid: "description",
+        name: "description",
+        content: "A crowd-sourced platform to find verfied covid resources"
+      }
     ],
-    link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
-    ]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -24,11 +26,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/color-mode",
-    "@nuxtjs/pwa",
-  ],
+  buildModules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode"],
 
   tailwindcss: {
     jit: true
@@ -43,7 +41,8 @@ export default {
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
     // https://go.nuxtjs.dev/pwa
-    "nuxt-i18n"
+    "nuxt-i18n",
+    "@nuxtjs/pwa"
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
