@@ -4,6 +4,7 @@ const erroController = require("./controllers/erroController");
 const app = express();
 const cors = require("cors");
 const resourceRoute = require("./routes/resourceRoute");
+const userRoute = require("./routes/userRoute");
 const AppError = require("./utils/AppError");
 
 // Connect with DataBase
@@ -36,6 +37,7 @@ app.use(express.json());
  * Routes Registration
  */
 app.use("/api/v1", resourceRoute);
+app.use("/user", userRoute);
 
 /**
  * Unknown Route
