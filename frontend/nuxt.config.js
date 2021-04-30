@@ -58,7 +58,7 @@ export default {
       description: "A crowd-sourced platform to find verfied covid resources"
     },
     icon: {
-      fileName: "icon.png"
+      fileName: "app-icon.png"
     },
     manifest: {
       lang: "en",
