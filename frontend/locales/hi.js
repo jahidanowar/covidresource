@@ -1,7 +1,7 @@
 export default {
   welcome: "Hello World",
   logo: {
-    covid: "Covid",
+    covid: "कोविड",
     resource: "साधन"
   },
   dark: "डार्क मोड",
