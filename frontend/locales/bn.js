@@ -29,6 +29,7 @@ export default {
     state: "রাজ্য",
     district: "জেলা",
     address: "ঠিকানা",
-    add: "সংযুক্ত করুণ"
+    add: "সংযুক্ত করুণ",
+    searchCategory: "আপনি কি খুজছেন"
   }
 };
