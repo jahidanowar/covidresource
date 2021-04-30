@@ -5,7 +5,7 @@ const Resource = require("./../models/resourceModel");
  *  Resource Index
  */
 exports.index = catchAsync(async (req, res, next) => {
-  console.log(req.query);
+  // console.log(req.query);
   const query = Resource.find({});
 
   if (req.query.category) {
