@@ -2,34 +2,34 @@ export default {
   welcome: "Hello World",
   logo: {
     covid: "Covid",
-    resource: "Resource"
+    resource: "साधन"
   },
-  dark: "Dark",
-  light: "Light",
-  serach: "Search",
+  dark: "डार्क मोड",
+  light: "लाइट मोड",
+  serach: "खोजें",
   appbar: {
-    home: "HOME",
-    map: "MAP",
-    tiles: "LIST",
-    add: "ADD",
-    menu: "MENU",
-    close: "CLOSE"
+    home: "होम",
+    map: "नक्शा",
+    tiles: "लिस्ट्",
+    add: "जोड़े",
+    menu: "मेन्यू",
+    close: "बंद करे"
   },
   drawer: {
-    support: "Support",
-    contribute: "Contribute",
-    about: "About us"
+    support: "सहयोग करे",
+    contribute: "योगदान करे",
+    about: "हमारे बारे में जानकारी"
   },
   addResource: {
-    title: "Be a Hero",
-    subtitle: "Help other by adding verified resources",
-    category: "Category",
-    name: "Name",
-    phone: "Phone",
-    state: "State",
-    district: "District",
-    address: "Address",
-    add: "Add Resource",
-    searchCategory: "What are you looking for"
+    title: "वीर बने",
+    subtitle: "सत्यापित संसाधन जोड़कर लोगो की सहायता करें",
+    category: "वर्ग",
+    name: "नाम",
+    phone: "फ़ोन नंबर",
+    state: "राज्य",
+    district: "जिला",
+    address: "पता",
+    add: "साधन जोड़े",
+    searchCategory: "आप क्या ढूंढ रहे हैं"
   }
 };
