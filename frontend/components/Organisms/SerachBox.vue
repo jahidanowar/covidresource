@@ -77,7 +77,7 @@ export default {
         console.log(error);
       }
       if (this.$route.path !== "/resources") {
-        this.$router.replace({ path: "/resources" });
+        this.$router.push(this.localeRoute({ name: "resources" }));
       }
     }
   },
