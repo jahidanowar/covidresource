@@ -4,11 +4,11 @@ const Schema = mongoose.Schema;
 const resourceSchema = new Schema({
   category: {
     type: String,
-    required: true,
+    required: [true, "Please select a category"],
   },
   name: {
     type: String,
-    required: true,
+    required: [true, "Name is required"],
   },
   phone: [String],
   link: {
@@ -16,9 +16,11 @@ const resourceSchema = new Schema({
   },
   state: {
     type: String,
+    required: [true, "Please select a state"],
   },
   district: {
     type: String,
+    required: [true, "Please select a district"],
   },
   address: {
     type: String,
@@ -31,8 +33,18 @@ const resourceSchema = new Schema({
     type: Number,
     default: 0,
   },
+  info: {
+    type: String,
+  },
+  cost: {
+    type: String,
+  },
   verified: {
     type: Boolean,
+    default: false,
+  },
+  varifiedAt: {
+    type: Date,
     default: false,
   },
   createdAt: {
