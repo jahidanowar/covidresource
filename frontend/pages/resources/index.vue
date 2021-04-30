@@ -17,7 +17,7 @@
           :name="resource.name"
           :phone="resource.phone"
           :address="
-            resource.address + ', ' + resource.district + ', ' + resource.state
+            resource.address  + ', ' + resource.district + ', ' + resource.state
           "
           :date="resource.createdAt"
           :category="resource.category"
