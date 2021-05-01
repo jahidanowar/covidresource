@@ -12,13 +12,17 @@ npm i && npm run dev
 - [x] Resource API Scafolding
 - [x] Resource Database Setup
 - [x] Filter by resource category, availability and district
+- [x] Volunteer Dashboard API for verifying resource
 - [ ] Geo Serach resources
-- [ ] Croud calculation based on resource click
+- [ ] Crowd calculation based on resource click
 
 **Frontend**
 - [x] Frontend Scafolding
 - [x] i18n integeation
 - [x] Resource list page
+- [x] Login & Register Page
+- [ ] Volunteer dashboard frontend
+- [ ] Resource edit request
 - [ ] Map page
 - [ ] Single resource page
 - [ ] Faq, Support and dev guide page
