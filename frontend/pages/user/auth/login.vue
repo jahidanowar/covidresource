@@ -54,7 +54,7 @@
 import Alert from "../../../components/Atoms/Alert.vue";
 
 export default {
-  auth: "guest",
+  middleware: ['auth'],
   layout: "empty",
   components: { Alert },
   data() {
@@ -62,7 +62,7 @@ export default {
       loading: false,
       loginForm: {
         email: "",
-        password: "",
+        password: ""
       },
       errors: null,
       success: null
@@ -71,11 +71,11 @@ export default {
   methods: {
     async handleLogin() {
       if (this.errors) return;
-      console.log("Clicked");
       try {
         this.loading = true;
-        let response = await this.$auth.loginWith('local', { data: this.loginForm })
-        console.log(response)
+        let response = await this.$auth.loginWith("local", {
+          data: this.loginForm
+        });
         if (response.status === 200) {
           this.$router.replace({ path: "/user/dashboard" });
         }

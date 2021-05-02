@@ -50,8 +50,6 @@ export default {
       local: {
         token: {
           property: "token"
-          // required: true,
-          // type: 'Bearer'
         },
         user: {
           property: "user"
@@ -63,6 +61,12 @@ export default {
           user: { url: "/auth/user", method: "get" }
         }
       }
+    },
+    redirect: {
+      login: "/user/auth/login",
+      logout: "/",
+      callback: "/user/auth/login",
+      home: "/user/dashboard"
     }
   },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
