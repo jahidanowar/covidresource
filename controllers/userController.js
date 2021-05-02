@@ -49,14 +49,16 @@ exports.login = catchAsync(async (req, res, next) =>{
           expiresIn: "10h",
         }
       );
-      res.status(200).json({
-        token: token,
-        user: {
-          _id: user._id,
-          email: user.email,
-          type: user.type,
-        },
-      });
+      res.status(200).json(token);
     }
   }
+});
+
+exports.user = catchAsync(async(req, res, next) =>{
+  const userId = req.userId ;
+
+  const user = await User.findById(userId).select("-password");
+
+  res.status(200).json({data: user});
+
 });
