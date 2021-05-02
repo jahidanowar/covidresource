@@ -74,7 +74,7 @@ export default {
       console.log("Clicked");
       try {
         this.loading = true;
-        let response = await this.$auth.loginWith('local', { data: this.login })
+        let response = await this.$auth.loginWith('local', { data: this.loginForm })
         console.log(response)
         if (response.status === 200) {
           this.$router.replace({ path: "/user/dashboard" });

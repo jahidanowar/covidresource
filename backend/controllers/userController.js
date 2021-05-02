@@ -4,9 +4,9 @@ const User = require("../models/userModel");
 const catchAsync = require("./../utils/catchAsync");
 
 exports.index = catchAsync(async (req, res, next) => {
-  const users = User.find({});
+  const users = await User.find({});
   res.status(200).json(users);
-})
+});
 
 /*
  */
@@ -89,5 +89,9 @@ exports.user = catchAsync(async (req, res, next) => {
 
   const user = await User.findById(userId).select("-password");
 
-  res.status(200).json({ data: user });
+  res.status(200).json({ user });
+});
+
+exports.logout = catchAsync(async (req, res, next) => {
+  res.json({ status: "OK" });
 });
