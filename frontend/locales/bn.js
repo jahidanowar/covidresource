@@ -2,11 +2,12 @@ export default {
   welcome: "ওহে বিশ্ব",
   logo: {
     covid: "Covid",
-    resource: "সংস্থান"
+    resource: " সংস্থান"
   },
   dark: "অন্ধকার",
   light: "আলো",
-  serach: "অনুসন্ধান করুন",
+  search: "অনুসন্ধান করুন",
+  searching: "খুঁজছি",
   appbar: {
     home: "প্রথম পৃষ্ঠা",
     map: "মানচিত্র",

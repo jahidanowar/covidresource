@@ -6,7 +6,8 @@ export default {
   },
   dark: "Dark",
   light: "Light",
-  serach: "Search",
+  search: "Search",
+  searching: "Searching",
   appbar: {
     home: "HOME",
     map: "MAP",
@@ -24,11 +25,13 @@ export default {
     title: "Be a Hero",
     subtitle: "Help other by adding verified resources",
     category: "Category",
-    name: "Name",
+    name: "Lead Name or Title",
     phone: "Phone",
     state: "State",
     district: "District",
     address: "Address",
+    info: "Availabilty Info",
+    source: "Lead Source",
     add: "Add Resource",
     searchCategory: "What are you looking for"
   }
