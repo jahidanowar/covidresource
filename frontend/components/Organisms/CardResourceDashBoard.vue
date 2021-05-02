@@ -52,14 +52,17 @@ export default {
           .patch(`/resource/${id}`, { status: "published" })
           .then(response => {
             this.success = "Resource has been approved 👍";
+            this.emitActionEvent(id);
           });
       } else if (action === "reject") {
-        this.$axios
-          .delete(`/resource/${id}`)
-          .then(response => {
-            this.success = "Resource has been dropped";
-          });
+        this.$axios.delete(`/resource/${id}`).then(response => {
+          this.success = "Resource has been dropped";
+          this.emitActionEvent(id);
+        });
       }
+    },
+    emitActionEvent(v) {
+      this.$emit("action", v);
     }
   }
 };
