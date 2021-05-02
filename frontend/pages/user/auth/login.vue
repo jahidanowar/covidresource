@@ -71,10 +71,12 @@ export default {
   methods: {
     async handleLogin() {
       if (this.errors) return;
+      console.log("Clicked");
       try {
         this.loading = true;
-        const loggedIn = await this.$axios.post("/user/login", this.loginForm);
-        if (loggedIn.status === 200) {
+        let response = await this.$auth.loginWith('local', { data: this.login })
+        console.log(response)
+        if (response.status === 200) {
           this.$router.replace({ path: "/user/dashboard" });
         }
       } catch (error) {

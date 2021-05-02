@@ -101,7 +101,7 @@ export default {
       try {
         this.loading = true;
         const userRegistered = await this.$axios.post(
-          "/user/register",
+          "/auth/register",
           this.registerForm
         );
 

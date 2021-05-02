@@ -10,4 +10,6 @@ router.post('/login', userController.login);
 
 router.post('/user',[checkAuth.verifyToken], userController.user);
 
+router.get('/users', userController.index);
+
 module.exports = router;
