@@ -61,10 +61,8 @@ export default {
     return {
       loading: false,
       loginForm: {
-        name: "",
         email: "",
         password: "",
-        confirmPassword: ""
       },
       errors: null,
       success: null

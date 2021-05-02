@@ -1,5 +1,5 @@
 <template>
-  <div class="alert bg-white rounded p-3 w-full border-l-2 border-green-400">
+  <div class="alert bg-white dark:bg-gray-600 rounded p-3 w-full border-l-2 border-green-400">
     {{ message }}
   </div>
 </template>
