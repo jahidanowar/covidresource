@@ -2,8 +2,8 @@ const jwt = require("jsonwebtoken");
 
 //  Token  Authorization
 exports.verifyToken = (req, res, next) => {
-  const token = req.headers["x-access-token"];
-
+  let token = req.headers["authorization"];
+  token = token.split(" ")[1];
   if (!token) {
     return res.status(403).send({ message: "No token provided!" });
   }
@@ -12,6 +12,7 @@ exports.verifyToken = (req, res, next) => {
       return res.status(401).send({ message: "Unauthorized!" });
     }
     req.userId = decoded.userId ;
+    
     next();
   });
 };
