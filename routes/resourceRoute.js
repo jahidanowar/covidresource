@@ -16,11 +16,11 @@ router.get(
   [checkAuth.verifyToken],
   resourceController.getPendingResources
 );
-  
+
 //Resource Route
 router
   .route("/resource/:slug/")
   .get([cache.cacheMiddleware(30)], resourceController.show)
-  .patch(resourceController.update);
+  .patch([checkAuth.verifyToken], resourceController.update);
 
 module.exports = router;
