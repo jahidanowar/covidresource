@@ -52,7 +52,9 @@
 
 <script>
 import Alert from "../../../components/Atoms/Alert.vue";
+
 export default {
+  auth: "guest",
   layout: "empty",
   components: { Alert },
   data() {
