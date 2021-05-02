@@ -57,6 +57,9 @@
           </svg>
         </menu-item>
       </li>
+      <li v-if="$auth.loggedIn" class="p-3 w-full">
+        <logout />
+      </li>
 
       <li class="p-3 w-full"><color-switcher /></li>
       <li class="p-3">
@@ -68,10 +71,11 @@
 
 <script>
 import LanguageSwitcher from "../Atoms/LanguageSwitcher.vue";
+import Logout from "../Atoms/Logout.vue";
 import MenuItem from "../Atoms/MenuItem.vue";
 import ColorSwitcher from "./../Atoms/ColorSwitcher";
 export default {
-  components: { ColorSwitcher, LanguageSwitcher, MenuItem }
+  components: { ColorSwitcher, LanguageSwitcher, MenuItem, Logout }
 };
 </script>
 

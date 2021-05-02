@@ -9,17 +9,20 @@ export default {
   search: "Search",
   searching: "Searching",
   appbar: {
+    dashboard: "DASHBOARD",
     home: "HOME",
     map: "MAP",
     tiles: "LIST",
     add: "ADD",
     menu: "MENU",
-    close: "CLOSE"
+    close: "CLOSE",
+    login: "LOGIN"
   },
   drawer: {
     support: "Support",
     contribute: "Contribute",
-    about: "About us"
+    about: "About us",
+    logout: "Logout"
   },
   addResource: {
     title: "Be a Hero",

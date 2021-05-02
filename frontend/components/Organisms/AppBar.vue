@@ -60,6 +60,42 @@
               </svg>
             </menu-item>
           </li>
+          <li v-if="$auth.loggedIn" class="p-5">
+            <menu-item to="/user/dashboard" :title="$t('appbar.dashboard')">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"
+                ></path>
+              </svg>
+            </menu-item>
+          </li>
+          <li v-if="!$auth.loggedIn" class="p-5">
+            <menu-item to="/user/auth/login" :title="$t('appbar.login')">
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11 16l-4-4m0 0l4-4m-4 4h14m-5 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h7a3 3 0 013 3v1"
+                ></path>
+              </svg>
+            </menu-item>
+          </li>
           <li class="p-5">
             <button @click="toggleDrawer" class="focus:outline-none">
               <icon-menu :isOpened="drawer" />

@@ -107,7 +107,6 @@ import Alert from "../../components/Atoms/Alert.vue";
 import CategorySelect from "../../components/Atoms/CategorySelect.vue";
 import VueSelect from "../../components/Molecules/VueSelect.vue";
 export default {
-  middleware: ["auth"],
   components: { VueSelect, CategorySelect, Alert },
   name: "Add",
   data() {
