@@ -61,6 +61,9 @@ label {
 .btn-primary {
   @apply p-2 rounded bg-green-400 w-full text-white focus:outline-none;
 }
+.btn-danger {
+  @apply p-2 rounded bg-red-400 w-full text-white focus:outline-none;
+}
 
 /* Menu Item  */
 .nuxt-link-exact-active > svg {

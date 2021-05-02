@@ -7,7 +7,7 @@
     :to="localePath(to)"
   >
     <slot></slot>
-    <span :class="{ hidden: type !== 'navlink' }"> {{ title }}</span>
+    <span :class="{ 'hidden sm:block': type !== 'navlink' }"> {{ title }}</span>
   </nuxt-link>
 </template>
 

@@ -1,7 +1,7 @@
 <template>
-  <a class="flex items-center" @click.prevent="$auth.logout()">
+  <a class="flex items-center flex-row sm:flex-row-reverse cursor-pointer" @click.prevent="$auth.logout()">
     <svg
-      class="w-6 h-6"
+      class="w-6 h-6 cursor-pointer mr-2 sm:ml-2"
       fill="none"
       stroke="currentColor"
       viewBox="0 0 24 24"
