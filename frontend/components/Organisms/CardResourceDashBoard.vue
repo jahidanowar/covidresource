@@ -55,10 +55,12 @@ export default {
             this.emitActionEvent(id);
           });
       } else if (action === "reject") {
-        this.$axios.delete(`/resource/${id}`).then(response => {
-          this.success = "Resource has been dropped";
-          this.emitActionEvent(id);
-        });
+        this.$axios
+          .patch(`/resource/${id}`, { status: "rejected" })
+          .then(response => {
+            this.success = "Resource has been rejected";
+            this.emitActionEvent(id);
+          });
       }
     },
     emitActionEvent(v) {
