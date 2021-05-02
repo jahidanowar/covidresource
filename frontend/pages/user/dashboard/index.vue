@@ -19,37 +19,20 @@
       <h2 class="text-xl font-semibold mb-5">Pending Verification</h2>
 
       <div class="grid sm:grid-cols-2 gap-5">
-        <div
-          v-for="(resource, i) in resources.data"
-          :key="i"
-          class="rounded p-3 bg-white dark:bg-gray-700 shadow"
-        >
-          <chip>Hospital</chip>
-          <h3 class="mt-3 text-xl mb-2">{{ resource.name }}</h3>
-          <p class="text-xs mb-3">
-            Add: {{ resource.address }},{{ resource.district }},{{
-              resource.state
-            }}
-          </p>
-          <div class="">
-            <a :href="resource.link" target="_blank" class="text-blue-400"
-              >Source Link</a
-            >
-          </div>
-          <div class="flex gap-5 mt-3">
-            <button class="btn-danger text-xs">Reject</button>
-            <button class="btn-primary text-xs">Approve</button>
-          </div>
-        </div>
+        <card-resource-dash-board
+          v-for="(resource) in resources.data"
+          :key="resource._id"
+          :resource="resource"
+        />
       </div>
     </section>
   </div>
 </template>
 
 <script>
-import Chip from "../../../components/Atoms/Chip.vue";
+import CardResourceDashBoard from "../../../components/Organisms/CardResourceDashBoard.vue";
 export default {
-  components: { Chip },
+  components: { CardResourceDashBoard },
   middleware: ["auth"],
   data() {
     return {

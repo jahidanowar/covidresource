@@ -77,9 +77,12 @@ exports.show = catchAsync(async (req, res) => {
 exports.update = catchAsync(async (req, res) => {
   const resourceId = req.params.slug;
 
-  const source = await Resource.findById(resourceId);
+  // const source = await Resource.findById(resourceId);
+
+  const { status } = req.body;
+
   await Resource.findByIdAndUpdate(resourceId, {
-    $set: { views: source.views + 1 },
+    $set: { status },
   });
   res.status(200).json({ message: "Updated!!" });
 });
