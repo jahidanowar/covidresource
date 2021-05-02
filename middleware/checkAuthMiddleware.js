@@ -5,7 +5,7 @@ exports.verifyToken = (req, res, next) => {
   let token = req.headers["authorization"];
   token = token.split(" ")[1];
   if (!token) {
-    return res.status(403).send({ message: "No token provided!" });
+    return res.status(403).send({ message: "Unauthorized Request!" });
   }
   jwt.verify(token, process.env.JWT_KEY, (err, decoded) => {
     if (err) {
