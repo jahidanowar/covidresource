@@ -64,5 +64,5 @@ label {
 
 /* Menu Item  */
 .nuxt-link-exact-active > svg {
-  @apply text-green-500;
+  @apply text-green-400;
 }
