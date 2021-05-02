@@ -1,7 +1,7 @@
 <template>
   <div>
     <app-bar />
-    <div class="container mx-auto mb-32">
+    <div class="container mx-auto mb-20">
       <Nuxt />
     </div>
   </div>
