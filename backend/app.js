@@ -37,7 +37,7 @@ app.use(express.json());
  * Routes Registration
  */
 app.use("/api/v1", resourceRoute);
-app.use("/user", userRoute);
+app.use("/api/auth", userRoute);
 
 /**
  * Unknown Route
