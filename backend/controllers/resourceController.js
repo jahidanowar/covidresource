@@ -83,3 +83,13 @@ exports.update = catchAsync(async (req, res) => {
   });
   res.status(200).json({ message: "Updated!!" });
 });
+
+/**
+ * Un Published Resources
+ */
+exports.getPendingResources = catchAsync(async (req, res, next) => {
+  const query = Resource.find({ staus: "pending" });
+  query.sort("_id").limit(100);
+  const resources = await query;
+  res.status(200).json({ count: resources.length, data: resources });
+});
