@@ -21,7 +21,7 @@ npm i && npm run dev
 - [x] i18n integeation
 - [x] Resource list page
 - [x] Login & Register Page
-- [ ] Volunteer dashboard frontend
+- [x] Volunteer dashboard frontend
 - [ ] Resource edit request
 - [ ] Map page
 - [ ] Single resource page
