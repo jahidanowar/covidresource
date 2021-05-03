@@ -30,33 +30,6 @@ exports.login = catchAsync(async (req, res, next) => {
   const password = req.body.password;
 
   const user = await User.findOne({ email: email });
-
-  //Redundant
-  // if (!user) {
-  //   res.status(404).json({
-  //     message: "Email does not exist!",
-  //   });
-  // } else {
-  //   const isMatch = await bcrypt.compare(password, user.password);
-  //   if (!isMatch) {
-  //     res.status(422).json({
-  //       message: "Invalid Email & Password!",
-  //     });
-  //   } else {
-  //     const token = jwt.sign(
-  //       {
-  //         email: user.email,
-  //         userId: user._id,
-  //       },
-  //       process.env.JWT_KEY,
-  //       {
-  //         expiresIn: "10h",
-  //       }
-  //     );
-  //     res.status(200).json(token);
-  //   }
-  // }
-
   // Pro
   if (!user) {
     return res.status(404).json({

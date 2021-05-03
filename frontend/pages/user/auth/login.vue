@@ -32,7 +32,7 @@
           >
         </div>
         <div class="form-group mt-5 text-center">
-          <button class="btn-primary mb-4">
+          <button class="btn-primary mb-4" :disabled="loading">
             <template v-if="loading">
               ..
             </template>
@@ -45,7 +45,7 @@
           >
         </div>
       </form>
-      <alert v-if="success" :message="success" />
+      <alert v-if="errors" :message="errors.message" type="danger" />
     </div>
   </div>
 </template>
@@ -70,15 +70,14 @@ export default {
   },
   methods: {
     async handleLogin() {
-      if (this.errors) return;
       try {
         this.loading = true;
         let response = await this.$auth.loginWith("local", {
           data: this.loginForm
         });
-        if (response.status === 200) {
-          this.$router.replace({ path: "/user/dashboard" });
-        }
+        // if (response.status === 200) {
+        //   this.$router.replace({ path: "/user/dashboard" });
+        // }
       } catch (error) {
         this.errors = error.response.data;
       } finally {
