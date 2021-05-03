@@ -57,10 +57,11 @@
           </svg>
         </menu-item>
       </li>
-      <li v-if="$store.state.auth.loggedIn" class="p-3 w-full">
-        <logout />
-      </li>
-
+      <client-only>
+        <li v-if="$store.state.auth.loggedIn" class="p-3 w-full">
+          <logout />
+        </li>
+      </client-only>
       <li class="p-3 w-full"><color-switcher /></li>
       <li class="p-3">
         <language-switcher />
