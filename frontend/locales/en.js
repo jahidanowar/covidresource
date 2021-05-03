@@ -8,6 +8,7 @@ export default {
   light: "Light",
   search: "Search",
   searching: "Searching",
+  edit: "Edit",
   appbar: {
     dashboard: "DASHBOARD",
     home: "HOME",
@@ -36,6 +37,7 @@ export default {
     info: "Availabilty Info",
     source: "Lead Source",
     add: "Add Resource",
+    update: "Update",
     searchCategory: "What are you looking for"
   }
 };

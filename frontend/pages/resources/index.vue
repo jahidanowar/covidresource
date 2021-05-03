@@ -14,10 +14,11 @@
         <card-resource
           v-for="(resource, i) in resources"
           :key="i"
+          :id="resource._id"
           :name="resource.name"
           :phone="resource.phone"
           :address="
-            resource.address  + ', ' + resource.district + ', ' + resource.state
+            resource.address + ', ' + resource.district + ', ' + resource.state
           "
           :date="resource.createdAt"
           :category="resource.category"

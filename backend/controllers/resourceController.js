@@ -79,10 +79,10 @@ exports.update = catchAsync(async (req, res) => {
 
   // const source = await Resource.findById(resourceId);
 
-  const { status } = req.body;
+  const { name, phone, info } = req.body;
 
   await Resource.findByIdAndUpdate(resourceId, {
-    $set: { status },
+    $set: { name, phone, info },
   });
   res.status(200).json({ message: "Updated!!" });
 });

@@ -1,7 +1,10 @@
 <template>
   <div class="rounded shadow p-4 bg-white dark:bg-gray-700">
-    <div class="inline-flex mb-4">
+    <div class="flex mb-4 justify-between">
       <chip>{{ category }}</chip>
+      <client-only>
+        <button-edit v-if="$auth.loggedIn" :id="id" />
+      </client-only>
     </div>
     <div class="flex flex-col lg:flex-row justify-between lg:items-center">
       <div class="info">
@@ -81,10 +84,12 @@
 </template>
 
 <script>
+import ButtonEdit from "../Atoms/ButtonEdit.vue";
 import Chip from "../Atoms/Chip.vue";
 export default {
-  components: { Chip },
+  components: { Chip, ButtonEdit },
   props: {
+    id: String,
     name: String,
     category: String,
     address: String,
