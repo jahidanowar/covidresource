@@ -31,7 +31,7 @@ export default {
     name: "Lead Name or Title",
     phone: "Phone",
     state: "State",
-    district: "District",
+    district: "City",
     address: "Address",
     info: "Availabilty Info",
     source: "Lead Source",

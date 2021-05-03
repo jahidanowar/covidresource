@@ -9,17 +9,20 @@ export default {
   search: "खोजें",
   searching: "Searching",
   appbar: {
+    dashboard: "डैशबोर्ड",
     home: "होम",
     map: "नक्शा",
     tiles: "लिस्ट्",
     add: "जोड़े",
     menu: "मेन्यू",
-    close: "बंद करे"
+    close: "बंद करे",
+    login: "लॉग इन"
   },
   drawer: {
     support: "सहयोग करे",
     contribute: "योगदान करे",
-    about: "हमारे बारे में जानकारी"
+    about: "हमारे बारे में जानकारी",
+    logout: "लॉग आउट"
   },
   addResource: {
     title: "वीर बने",
@@ -28,7 +31,7 @@ export default {
     name: "नाम",
     phone: "फ़ोन नंबर",
     state: "राज्य",
-    district: "जिला",
+    district: "शहर",
     address: "पता",
     add: "साधन जोड़े",
     searchCategory: "आप क्या ढूंढ रहे हैं"

@@ -9,17 +9,20 @@ export default {
   search: "অনুসন্ধান করুন",
   searching: "খুঁজছি",
   appbar: {
+    dashboard: "ড্যাশবোর্ড",
     home: "প্রথম পৃষ্ঠা",
     map: "মানচিত্র",
     tiles: "তালিকা",
     add: "যোগ",
     menu: "মেনু",
-    close: "বন্ধ"
+    close: "বন্ধ",
+    login: "লগইন"
   },
   drawer: {
     support: "সমর্থন করুন",
     contribute: "অবদান করুন",
-    about: "আমাদের সম্পর্কে"
+    about: "আমাদের সম্পর্কে",
+    logout: "লগআউট"
   },
   addResource: {
     title: "অন্যদের সাহায্য করুন",
@@ -28,7 +31,7 @@ export default {
     name: "নাম",
     phone: "ফোন",
     state: "রাজ্য",
-    district: "জেলা",
+    district: "শহর",
     address: "ঠিকানা",
     add: "সংযুক্ত করুণ",
     searchCategory: "আপনি কি খুজছেন"
