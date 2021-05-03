@@ -94,5 +94,8 @@ exports.getPendingResources = catchAsync(async (req, res, next) => {
   const query = Resource.find({ status: "pending" });
   query.sort("_id").limit(100);
   const resources = await query;
-  res.status(200).json({ count: resources.length, data: resources });
+  const totalResources = await Resource.count({});
+  res
+    .status(200)
+    .json({ count: resources.length, totalResources, data: resources });
 });
