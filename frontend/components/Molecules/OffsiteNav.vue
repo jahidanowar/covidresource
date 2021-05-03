@@ -57,7 +57,7 @@
           </svg>
         </menu-item>
       </li>
-      <li v-if="$auth.loggedIn" class="p-3 w-full">
+      <li v-if="$store.state.auth.loggedIn" class="p-3 w-full">
         <logout />
       </li>
 

@@ -60,7 +60,7 @@
               </svg>
             </menu-item>
           </li>
-          <li v-if="$auth.loggedIn" class="p-5">
+          <li v-if="$store.state.auth.loggedIn" class="p-5">
             <menu-item to="/user/dashboard" :title="$t('appbar.dashboard')">
               <svg
                 class="w-6 h-6"
@@ -78,7 +78,7 @@
               </svg>
             </menu-item>
           </li>
-          <li v-if="!$auth.loggedIn" class="p-5">
+          <li v-if="!$store.state.auth.loggedIn" class="p-5">
             <menu-item to="/user/auth/login" :title="$t('appbar.login')">
               <svg
                 class="w-6 h-6"

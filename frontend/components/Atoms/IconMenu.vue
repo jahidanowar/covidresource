@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center text-sm font-semibold">
+  <div class="flex flex-col items-center text-sm">
     <template v-if="!isOpened">
       <svg
         class="w-6 h-6"
