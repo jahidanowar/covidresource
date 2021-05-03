@@ -41,6 +41,7 @@ export default {
     };
   },
   computed: {
+
     getPendingResource() {
       return this.resources.data ? this.resources.data.length : 0;
     }
