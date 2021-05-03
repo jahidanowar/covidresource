@@ -1,5 +1,7 @@
 <template>
-  <div class="py-5 px-4 sm:px-0 h-screen grid place-items-center">
+  <div
+    class="container mx-auto py-5 px-4 sm:px-0 h-screen grid place-items-center"
+  >
     <div>
       <h1 class="text-3xl font-semibold mb-2">Login</h1>
       <form @submit.prevent="handleLogin" class="mt-5">

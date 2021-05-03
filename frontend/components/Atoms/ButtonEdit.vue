@@ -1,5 +1,8 @@
 <template>
-  <button @click="handleEdit">
+  <button
+    @click="handleEdit"
+    class="focus:outline-none focus:text-green-400 hover:text-green-400"
+  >
     <svg
       class="w-6 h-6"
       fill="none"

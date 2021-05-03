@@ -36,6 +36,11 @@ exports.login = catchAsync(async (req, res, next) => {
       message: "Email does not exist!",
     });
   }
+  if (!user.verified) {
+    return res.status(403).json({
+      message: "Please wait. One of our moderators will activate your account",
+    });
+  }
   const isMatch = await bcrypt.compare(password, user.password);
 
   if (!isMatch) {

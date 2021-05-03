@@ -49,7 +49,7 @@
 </template>
 
 <script>
-import Alert from '../../components/Atoms/Alert.vue';
+import Alert from "../../components/Atoms/Alert.vue";
 export default {
   components: { Alert },
   middleware: ["auth"],
@@ -87,8 +87,8 @@ export default {
           this.success = "Thank you 🙂, The resource has been update";
           setTimeout(() => {
             this.success = null;
+            this.$router.go(-1);
           }, 5000);
-          this.$router.go(-1);
         }
       } catch (error) {}
     }

@@ -22,7 +22,7 @@ npm i && npm run dev
 - [x] Resource list page
 - [x] Login & Register Page
 - [x] Volunteer dashboard frontend
-- [ ] Resource edit request
+- [x] Resource edit request
 - [ ] Map page
 - [ ] Single resource page
 - [ ] Faq, Support and dev guide page
