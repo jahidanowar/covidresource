@@ -171,6 +171,11 @@ export default {
   },
   mounted() {
     this.getLocation();
+  },
+  head() {
+    return {
+      title: "Add Verified Covid Resource"
+    };
   }
 };
 </script>

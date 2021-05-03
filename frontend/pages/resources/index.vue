@@ -44,6 +44,11 @@ export default {
       return this.$store.getters["resource/getResources"];
     }
   },
+  head() {
+    return {
+      title: "Covid Resources"
+    };
+  }
 };
 </script>
 

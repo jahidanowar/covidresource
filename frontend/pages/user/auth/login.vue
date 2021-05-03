@@ -85,6 +85,11 @@ export default {
         this.loading = false;
       }
     }
+  },
+  head() {
+    return {
+      title: "Login"
+    };
   }
 };
 </script>

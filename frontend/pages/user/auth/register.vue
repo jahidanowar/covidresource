@@ -81,7 +81,7 @@
 import Alert from "../../../components/Atoms/Alert.vue";
 export default {
   components: { Alert },
-  middleware: ['auth'],
+  middleware: ["auth"],
   data() {
     return {
       loading: false,
@@ -157,6 +157,11 @@ export default {
         this.errors.error = false;
       }
     }
+  },
+  head() {
+    return {
+      title: "Register as a volunteer"
+    };
   }
 };
 </script>

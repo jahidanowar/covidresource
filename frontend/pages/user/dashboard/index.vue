@@ -11,13 +11,12 @@
       <div
         class="w-1/2 rounded border-t-4 border-blue-400 bg-white dark:bg-gray-700 p-5 shadow text-center"
       >
-        <div class="text-3xl font-bold">15K</div>
+        <div class="text-3xl font-bold">{{ resources.totalResources }}</div>
         <span>RESOURCES</span>
       </div>
     </div>
-    <section class="mt-5">
+    <section v-if="getPendingResource > 0" class="mt-5">
       <h2 class="text-xl font-semibold mb-5">Pending Verification</h2>
-
       <div class="grid sm:grid-cols-2 gap-5">
         <card-resource-dash-board
           v-for="resource in resources.data"
@@ -26,6 +25,9 @@
           @action="action"
         />
       </div>
+    </section>
+    <section v-else class="text-center mt-5">
+      All the resources are verified slide down to check for new resource
     </section>
   </div>
 </template>
@@ -41,7 +43,6 @@ export default {
     };
   },
   computed: {
-
     getPendingResource() {
       return this.resources.data ? this.resources.data.length : 0;
     }
@@ -68,6 +69,11 @@ export default {
       );
       resourceIndex !== -1 && this.resources.data.splice(resourceIndex, 1);
     }
+  },
+  head() {
+    return {
+      title: "Dashboard"
+    };
   }
 };
 </script>
