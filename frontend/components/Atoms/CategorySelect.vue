@@ -4,7 +4,7 @@
     ref="select"
     @input="handleSelect"
   >
-    <option value="">Select</option>
+    <option value="">All</option>
     <option value="Oxygen">Oxygen</option>
     <option value="Oxygen Refil">Oxygen Refil</option>
     <option value="Hospital">Hospital</option>
@@ -25,7 +25,7 @@ export default {
     handleSelect(e) {
       this.$emit("input", e.target.value);
     }
-  },
+  }
 };
 </script>
 
