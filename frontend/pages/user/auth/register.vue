@@ -82,6 +82,7 @@ import Alert from "../../../components/Atoms/Alert.vue";
 export default {
   components: { Alert },
   middleware: ["auth"],
+  auth: "guest",
   data() {
     return {
       loading: false,
