@@ -1,7 +1,7 @@
 <template>
   <div>
     <template v-if="type === 'navlink'">
-      <a class="flex items-center flex-row sm:flex-row-reverse" :href="to">
+      <a class="flex items-center flex-row sm:flex-row-reverse" :href="to" target="_blank">
         <slot></slot>
         <span> {{ title }}</span>
       </a>

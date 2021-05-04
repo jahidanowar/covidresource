@@ -22,7 +22,7 @@
         </menu-item>
       </li>
       <li class="p-3 w-full">
-        <menu-item to="/" :title="$t('drawer.contribute')" type="navlink">
+        <menu-item to="https://github.com/jahidanowar/covidresource" :title="$t('drawer.contribute')" type="navlink">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="w-6 h-6 mr-2 sm:ml-2"
