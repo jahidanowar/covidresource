@@ -1,23 +1,23 @@
 <template>
   <div>
     <form action="" class="mt-5" @submit.prevent="handleSearch">
-      <div class="flex flex-col">
-        <div class="form-group">
+      <div class="flex flex-col lg:flex-row justify-between items-center lg:gap-5">
+        <div class="form-group w-full ">
           <label for="state">{{ $t("addResource.state") }}</label>
           <vue-select v-model="state" :data="states" />
         </div>
-        <div class="form-group">
+        <div class="form-group w-full">
           <label for="district">{{ $t("addResource.district") }}</label>
           <vue-select :data="districts" v-model="district" />
         </div>
-        <div class="form-group">
+        <div class="form-group w-full">
           <label for="category">{{ $t("addResource.searchCategory") }}</label>
           <category-select v-model="category" />
         </div>
-        <div class="form-group">
+        <div class="form-group w-full">
           <button
             type="submit"
-            class="btn-primary mt-2 flex justify-center items-center"
+            class="btn-primary mt-2 md:mt-5 flex justify-center items-center"
           >
             <template v-if="loading"
               >{{ $t("searching") }}
