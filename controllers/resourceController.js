@@ -70,7 +70,6 @@ exports.show = catchAsync(async (req, res) => {
   const resource = await Resource.findById(resourceId);
   res.status(200).json({ data: resource });
 });
-
 /**
  *  Upadte Views in a Resource
  */
