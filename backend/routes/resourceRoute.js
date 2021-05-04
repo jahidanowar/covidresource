@@ -7,7 +7,7 @@ const checkAuth = require("../middleware/checkAuthMiddleware");
 //Resources Route
 router
   .route("/resource/")
-  .get(resourceController.index)
+  .get([cache.cacheMiddleware(30)], resourceController.index)
   .post(resourceController.store);
 
 //Dashboard Routes
