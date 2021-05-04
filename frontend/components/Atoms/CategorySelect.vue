@@ -4,7 +4,7 @@
     ref="select"
     @input="handleSelect"
   >
-    <option value="">All</option>
+    <option value="">Select</option>
     <option value="Oxygen">Oxygen</option>
     <option value="Oxygen Refil">Oxygen Refil</option>
     <option value="Hospital">Hospital</option>
