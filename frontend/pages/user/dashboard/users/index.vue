@@ -7,7 +7,7 @@
         <div
           v-for="user in users"
           :key="user._id"
-          class="p-3 shadow rounded flex flex-col"
+          class="p-3 shadow rounded flex flex-col bg-white dark:bg-gray-700"
         >
           <div>
             <p>{{ user.name }}</p>
