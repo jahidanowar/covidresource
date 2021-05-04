@@ -5,7 +5,15 @@
     <form @submit.prevent="addResource" class="mt-5" autocomplete="off">
       <div class="form-group">
         <label for="category">{{ $t("addResource.category") }}</label>
-        <category-select v-model="resourceForm.category" />
+        <category-select
+          v-model="resourceForm.category"
+          :errorClass="{ 'border-red-300 dark:border-red-400': errors && errors.category }"
+        />
+        <span
+          class="form-error text-xs text-red-400"
+          v-if="errors && errors.category"
+          >{{ errors.category.message }}</span
+        >
       </div>
       <div class="form-group">
         <label for="name">{{ $t("addResource.name") }}</label>
@@ -13,7 +21,7 @@
           type="text"
           v-model="resourceForm.name"
           class="form-control"
-          :class="{ 'border-red-300': errors && errors.name }"
+          :class="{ 'border-red-300 dark:border-red-400': errors && errors.name }"
           required
         />
         <span
@@ -28,7 +36,7 @@
           type="tel"
           v-model="resourceForm.phone"
           class="form-control"
-          :class="{ 'border-red-300': errors && errors.phone }"
+          :class="{ 'border-red-300 dark:border-red-400': errors && errors.phone }"
           required
         />
         <span
@@ -42,7 +50,7 @@
         <vue-select
           v-model="resourceForm.state"
           :data="states"
-          :errorClass="{ 'border-red-300': errors && errors.state }"
+          :errorClass="{ 'border-red-300 dark:border-red-400': errors && errors.state }"
         />
         <span
           class="form-error text-xs text-red-400"
@@ -55,7 +63,7 @@
         <vue-select
           v-model="resourceForm.district"
           :data="districts"
-          :errorClass="{ 'border-red-300': errors && errors.district }"
+          :errorClass="{ 'border-red-300 dark:border-red-400': errors && errors.district }"
         />
         <span
           class="form-error text-xs text-red-400"
@@ -81,7 +89,7 @@
           type="url"
           v-model="resourceForm.source"
           class="form-control"
-          :class="{ 'border-red-300': errors && errors.link }"
+          :class="{ 'border-red-300 dark:border-red-400': errors && errors.link }"
           required
         />
         <span
@@ -112,7 +120,7 @@ export default {
   data() {
     return {
       resourceForm: {
-        category: 0,
+        category: "",
         name: "",
         address: "",
         district: "",
@@ -122,7 +130,7 @@ export default {
         source: "",
         info: ""
       },
-      errors: null,
+      errors: {},
       success: null
     };
   },
@@ -139,6 +147,12 @@ export default {
   },
   methods: {
     async addResource() {
+      // if (this.resourceForm.category == "") {
+      //   this.errors.category = {};
+      //   this.errors.category.message = "Select a category";
+      //   return;
+      // }
+
       try {
         const resource = await this.$axios.post("/resource", this.resourceForm);
         // console.log(resource);

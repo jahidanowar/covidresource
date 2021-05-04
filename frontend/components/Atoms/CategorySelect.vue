@@ -3,6 +3,7 @@
     class="form-control appearance-none"
     ref="select"
     @input="handleSelect"
+    :class="errorClass"
   >
     <option value="">Select</option>
     <option value="Oxygen">Oxygen</option>
@@ -18,6 +19,9 @@
 
 <script>
 export default {
+  props: {
+    errorClass: Object
+  },
   data() {
     return {};
   },
