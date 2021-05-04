@@ -97,7 +97,10 @@
                 </svg>
               </menu-item>
             </li>
-            <li v-if="$auth.user.role === 'moderator'" class="p-5">
+            <li
+              v-if="$auth.loggedIn && $auth.user.role === 'moderator'"
+              class="p-5"
+            >
               <menu-item to="/user/dashboard/users" title="Manage Users">
                 <svg
                   class="w-6 h-6"
