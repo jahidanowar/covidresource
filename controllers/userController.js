@@ -4,8 +4,48 @@ const User = require("../models/userModel");
 const catchAsync = require("./../utils/catchAsync");
 
 exports.index = catchAsync(async (req, res, next) => {
-  const users = await User.find({});
+  const users = await User.find({
+    verified: false,
+    _id: { $ne: req.userId },
+  }).select("-password");
   res.status(200).json(users);
+});
+
+exports.update = catchAsync(async (req, res, next) => {
+  const { verified, role } = req.body;
+
+  const userUpdate = {};
+
+  if (role) {
+    userUpdate.role = role;
+  }
+  if (verified) {
+    userUpdate.verified = true;
+  }
+
+  const updatedUser = await User.findByIdAndUpdate(req.params.id, userUpdate);
+
+  // console.log(userUpdate, updatedUser);
+
+  if (!updatedUser) {
+    return res.status(500).json("Something went wrong");
+  }
+
+  return res.status(200).json("User updated");
+});
+
+exports.destroy = catchAsync(async (req, res, next) => {
+  const { id } = req.params;
+
+  if (!id) {
+    return res.status(400).json("Invalid Request");
+  }
+  const deleteUser = await User.findByIdAndDelete(id);
+  // console.log(userUpdate, updatedUser);
+  if (!deleteUser) {
+    return res.status(500).json("Something went wrong");
+  }
+  return res.status(200).json({});
 });
 
 /*
