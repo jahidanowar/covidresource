@@ -85,7 +85,7 @@ exports.update = catchAsync(async (req, res) => {
     updatedData.name = name;
   }
   if (phone) {
-    updatedData.phone = [phone];
+    updatedData.phone = phone;
   }
   if (info) {
     updatedData.info = info;
