@@ -79,7 +79,7 @@ exports.update = catchAsync(async (req, res) => {
 
   // const source = await Resource.findById(resourceId);
 
-  const { name, phone, info } = req.body;
+  const { name, phone, info, status } = req.body;
 
   const updatedData = {};
   if (name) {
@@ -94,7 +94,7 @@ exports.update = catchAsync(async (req, res) => {
   if (status) {
     updatedData.status = status;
   }
-  
+
   await Resource.findByIdAndUpdate(resourceId, {
     $set: updatedData,
   });
