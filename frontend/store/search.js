@@ -1,5 +1,5 @@
 export const state = () => ({
-  rstate: "",
+  rstate: "West Bengal",
   district: "",
   category: ""
 });
