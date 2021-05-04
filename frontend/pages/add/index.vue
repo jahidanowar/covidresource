@@ -7,7 +7,9 @@
         <label for="category">{{ $t("addResource.category") }}</label>
         <category-select
           v-model="resourceForm.category"
-          :errorClass="{ 'border-red-300 dark:border-red-400': errors && errors.category }"
+          :errorClass="{
+            'border-red-300 dark:border-red-400': errors && errors.category
+          }"
         />
         <span
           class="form-error text-xs text-red-400"
@@ -21,7 +23,9 @@
           type="text"
           v-model="resourceForm.name"
           class="form-control"
-          :class="{ 'border-red-300 dark:border-red-400': errors && errors.name }"
+          :class="{
+            'border-red-300 dark:border-red-400': errors && errors.name
+          }"
           required
         />
         <span
@@ -36,7 +40,9 @@
           type="tel"
           v-model="resourceForm.phone"
           class="form-control"
-          :class="{ 'border-red-300 dark:border-red-400': errors && errors.phone }"
+          :class="{
+            'border-red-300 dark:border-red-400': errors && errors.phone
+          }"
           required
         />
         <span
@@ -50,7 +56,9 @@
         <vue-select
           v-model="resourceForm.state"
           :data="states"
-          :errorClass="{ 'border-red-300 dark:border-red-400': errors && errors.state }"
+          :errorClass="{
+            'border-red-300 dark:border-red-400': errors && errors.state
+          }"
         />
         <span
           class="form-error text-xs text-red-400"
@@ -63,7 +71,9 @@
         <vue-select
           v-model="resourceForm.district"
           :data="districts"
-          :errorClass="{ 'border-red-300 dark:border-red-400': errors && errors.district }"
+          :errorClass="{
+            'border-red-300 dark:border-red-400': errors && errors.district
+          }"
         />
         <span
           class="form-error text-xs text-red-400"
@@ -89,7 +99,9 @@
           type="url"
           v-model="resourceForm.source"
           class="form-control"
-          :class="{ 'border-red-300 dark:border-red-400': errors && errors.link }"
+          :class="{
+            'border-red-300 dark:border-red-400': errors && errors.link
+          }"
           required
         />
         <span
@@ -176,7 +188,8 @@ export default {
       });
     },
     resetForm() {
-      this.resourceForm.category = 0;
+      this.errors = {};
+      this.resourceForm.category = "";
       this.resourceForm.name = this.resourceForm.address = this.resourceForm.district = this.resourceForm.state =
         "";
       this.resourceForm.source = this.resourceForm.info = this.resourceForm.phone =
