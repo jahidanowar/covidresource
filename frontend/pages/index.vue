@@ -62,8 +62,16 @@
               volunteer. We need you. India needs you!
             </p>
             <div class="mt-8 flex flex-col lg:flex-row">
-              <nuxt-link to="/add" class="rounded bg-green-400 text-gray-50 p-4 lg:mr-5 mb-5 lg:mb-0 text-center">Join as volunteer</nuxt-link>
-              <nuxt-link to="/add" class="rounded bg-gray-300 dark:bg-gray-800 p-4 text-center">Add resource lead</nuxt-link>
+              <nuxt-link
+                to="/add"
+                class="rounded bg-green-400 text-gray-50 p-4 text-center lg:mr-5 mb-5 lg:mb-0"
+                >Add resource lead</nuxt-link
+              >
+              <nuxt-link
+                to="/user/auth/register"
+                class="rounded bg-gray-300 dark:bg-gray-800 p-4 text-center"
+                >Join as volunteer</nuxt-link
+              >
             </div>
           </div>
           <div class="w-full lg:w-2/5">
