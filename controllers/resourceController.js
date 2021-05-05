@@ -92,6 +92,7 @@ exports.update = catchAsync(async (req, res) => {
   }
   if (status) {
     updatedData.status = status;
+    updatedData.verified = true;
   }
 
   await Resource.findByIdAndUpdate(resourceId, {
