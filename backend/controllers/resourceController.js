@@ -1,5 +1,6 @@
 const catchAsync = require("./../utils/catchAsync");
 const Resource = require("./../models/resourceModel");
+const sendMessage = require("../utils/sendMessage");
 
 /**
  *  Resource Index
@@ -59,6 +60,9 @@ exports.store = catchAsync(async (req, res) => {
   });
   const createdResource = await resource.save();
   res.status(201).json({ createdResource });
+  sendMessage(`A new resource added
+Category: *${category}*
+Name: *${name}*`);
 });
 
 /**
