@@ -62,7 +62,11 @@ exports.store = catchAsync(async (req, res) => {
   res.status(201).json({ createdResource });
   sendMessage(`A new resource added
 Category: *${category}*
-Name: *${name}*`);
+Name: *${name}*
+State: *${state}*
+City: *${district}*
+Phone: *${phone}*
+`);
 });
 
 /**
