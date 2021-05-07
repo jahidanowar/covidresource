@@ -1,6 +1,7 @@
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
+const sendMessage = require("../utils/sendMessage");
 const catchAsync = require("./../utils/catchAsync");
 
 exports.index = catchAsync(async (req, res, next) => {
@@ -29,6 +30,10 @@ exports.update = catchAsync(async (req, res, next) => {
 
   if (!updatedUser) {
     return res.status(500).json("Something went wrong");
+  }
+
+  if (verified) {
+    sendMessage(`User *${updatedUser.name}* has veen verfied`);
   }
 
   return res.status(200).json("User updated");
@@ -61,6 +66,7 @@ exports.register = catchAsync(async (req, res, next) => {
 
   const register = await user.save();
   res.status(201).json({ message: "Registered!", data: register });
+  sendMessage(`*${register.name}* has joined as a volunteer`);
 });
 
 /*
