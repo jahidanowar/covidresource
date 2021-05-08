@@ -52,25 +52,21 @@
         >
           <div class="w-full lg:w-3/5">
             <h1 class="text-3xl font-bold mb-2">
-              Become a volunteer, Be a real life super hero
+              {{ $t("cta.title") }}
             </h1>
             <p>
-              Help others by adding verfied resources. If you’ve any verified
-              information, we sincerely request you to add it. Don’t worry!
-              We’ll verify it before publishing. If you want to help us in
-              verifying and updating all the information, please become a
-              volunteer. We need you. India needs you!
+              {{ $t("cta.description") }}
             </p>
             <div class="mt-8 flex flex-col lg:flex-row">
               <nuxt-link
                 to="/add"
                 class="rounded bg-green-400 text-gray-50 p-4 text-center lg:mr-5 mb-5 lg:mb-0"
-                >Add resource lead</nuxt-link
+                >{{ $t("cta.addResource") }}</nuxt-link
               >
               <nuxt-link
                 to="/user/auth/register"
                 class="rounded bg-gray-300 dark:bg-gray-800 p-4 text-center"
-                >Join as volunteer</nuxt-link
+                >{{ $t("cta.becomeVolunteer") }}r</nuxt-link
               >
             </div>
           </div>

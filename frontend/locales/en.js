@@ -39,5 +39,12 @@ export default {
     add: "Add Resource",
     update: "Update",
     searchCategory: "What are you looking for"
+  },
+  cta: {
+    title: "Become a volunteer, Be a real life super hero",
+    descriotion:
+      "Help others by adding verfied resources. If you’ve any verified information, we sincerely request you to add it. Don’t worry! We’ll verify it before publishing. If you want to help us in verifying and updating all the information, please become a volunteer. We need you. India needs you!",
+    addResource: "Add resource lead",
+    becomeVolunteer: "Join as volunteer"
   }
 };
