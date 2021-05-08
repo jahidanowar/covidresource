@@ -1,5 +1,8 @@
 export default {
   welcome: "Hello World",
+  home:{
+    heading: "Search for resources"
+  },
   logo: {
     covid: "Covid",
     resource: " साधन"

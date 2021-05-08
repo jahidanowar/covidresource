@@ -3,7 +3,7 @@
     <div class="wrapper w-full">
       <section class="search">
         <h1 class="text-3xl lg:text-5xl font-bold lg:text-center mb-5">
-          Search for resources
+          {{ $("home.heading") }}
         </h1>
         <serach-box
           class="lg:py-5 lg:px-10 rounded-xl lg:pb-10 lg:border lg:bg-white lg:dark:bg-gray-700 lg:dark:border-gray-800"
