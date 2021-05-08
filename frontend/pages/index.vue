@@ -66,7 +66,7 @@
               <nuxt-link
                 to="/user/auth/register"
                 class="rounded bg-gray-300 dark:bg-gray-800 p-4 text-center"
-                >{{ $t("cta.becomeVolunteer") }}r</nuxt-link
+                >{{ $t("cta.becomeVolunteer") }}</nuxt-link
               >
             </div>
           </div>
