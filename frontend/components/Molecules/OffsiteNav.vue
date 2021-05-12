@@ -39,7 +39,7 @@
           </svg>
         </menu-item>
       </li>
-      <li class="p-3 w-full">
+      <!-- <li class="p-3 w-full">
         <menu-item to="/" :title="$t('drawer.about')" type="navlink">
           <svg
             class="w-6 h-6 mr-2 sm:ml-2"
@@ -56,7 +56,7 @@
             ></path>
           </svg>
         </menu-item>
-      </li>
+      </li> -->
       <client-only>
         <li v-if="$store.state.auth.loggedIn" class="p-3 w-full">
           <logout />
