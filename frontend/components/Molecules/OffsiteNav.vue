@@ -4,7 +4,7 @@
   >
     <ul class="container mx-auto sm:text-right mt-5 p-5">
       <li class="p-3 w-full">
-        <menu-item to="/" :title="$t('drawer.support')" type="navlink">
+        <menu-item to="https://t.me/covidWB" :title="$t('drawer.support')" type="navlink">
           <svg
             class="w-6 h-6 mr-2 sm:ml-2"
             fill="none"
