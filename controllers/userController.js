@@ -102,7 +102,7 @@ exports.login = catchAsync(async (req, res, next) => {
     },
     process.env.JWT_KEY,
     {
-      expiresIn: "10h",
+      expiresIn: "30d",
     }
   );
   res.status(200).json(token);
