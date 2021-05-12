@@ -2,7 +2,7 @@
   <div class="py-5 px-4 sm:px-0">
     <h1 class="text-3xl font-semibold mb-2">Register as volunteer</h1>
     <p class="opacity-70">Become a volunteer and add verfied resources</p>
-    <form @submit.prevent="handleRegister" class="mt-5">
+    <form v-if="!success" @submit.prevent="handleRegister" class="mt-5">
       <div class="form-group">
         <label for="email">Email</label>
         <input
@@ -74,6 +74,11 @@
       </div>
     </form>
     <alert v-if="success" :message="success" type="success" />
+    <div v-if="success" class="text-center mt-4">
+      <a class="btn-primary block" href="https://t.me/covidWB" target="_blank"
+        >Join Telegram</a
+      >
+    </div>
   </div>
 </template>
 
@@ -108,11 +113,11 @@ export default {
 
         if (userRegistered.status === 201) {
           this.success =
-            "Thanks for joining. We're redirecting you to login page";
-          setTimeout(() => {
-            this.success = null;
-            this.$router.replace({ path: "/user/auth/login" });
-          }, 3000);
+            "Thanks for joining. Join volunteer telegram group for verification update";
+          // setTimeout(() => {
+          //   this.success = null;
+          //   this.$router.replace({ path: "/user/auth/login" });
+          // }, 3000);
         }
       } catch (error) {
         this.errors = error.response.data;
