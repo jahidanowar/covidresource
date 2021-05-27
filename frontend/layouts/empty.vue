@@ -1,7 +1,6 @@
 <template>
   <div>
-    <app-bar />
-    <div class="container mx-auto mb-20">
+    <div class="container mx-auto">
       <Nuxt />
     </div>
   </div>
@@ -11,12 +10,11 @@
 import AppBar from "../components/Organisms/AppBar.vue";
 
 export default {
-  name: 'default',
+  name: "empty",
   components: {
     AppBar
   }
 };
 </script>
 
-<style>
-</style>
+<style></style>

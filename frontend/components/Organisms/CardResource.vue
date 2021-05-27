@@ -1,14 +1,17 @@
 <template>
   <div class="rounded shadow p-4 bg-white dark:bg-gray-700">
-    <div class="inline-flex mb-4">
+    <div class="flex mb-4 justify-between">
       <chip>{{ category }}</chip>
+      <client-only>
+        <button-edit v-if="$auth.loggedIn" :id="id" />
+      </client-only>
     </div>
     <div class="flex flex-col lg:flex-row justify-between lg:items-center">
       <div class="info">
         <h2 class="text-2xl mb-2 font-semibold">{{ name }}</h2>
-        <div class="address flex items-center opacity-70 mb-4">
+        <div class="address flex opacity-70 mb-4">
           <svg
-            class="w-5 h-5 mr-2"
+            class="w-6 h-6 mr-2"
             fill="none"
             stroke="currentColor"
             viewBox="0 0 24 24"
@@ -81,10 +84,12 @@
 </template>
 
 <script>
+import ButtonEdit from "../Atoms/ButtonEdit.vue";
 import Chip from "../Atoms/Chip.vue";
 export default {
-  components: { Chip },
+  components: { Chip, ButtonEdit },
   props: {
+    id: String,
     name: String,
     category: String,
     address: String,

@@ -4,10 +4,11 @@
       type="text"
       name="searchQuery"
       class="form-control"
-      v-model="query"
       @input="handleInput"
       ref="input"
       autocomplete="off"
+      :value="value"
+      :class="errorClass"
     />
     <div v-if="showOptions">
       <ul
@@ -32,7 +33,12 @@ export default {
     data: {
       type: Array,
       required: true
-    }
+    },
+    value: {
+      type: String,
+      required: false
+    },
+    errorClass: Object
   },
   data() {
     return {
@@ -61,8 +67,7 @@ export default {
       this.chosenOption = v;
       this.$emit("selected", v);
       this.showOptions = false;
-      this.$refs.input.focus();
-      this.query = v
+      this.$refs.input.value = v;
       // console.log(v)
     },
 
@@ -73,11 +78,10 @@ export default {
     },
 
     clickedOutside() {
-      this.showOptions = false;
-
-      if (!this.chosenOption) {
-        this.$emit("input", "");
-      }
+      // this.showOptions = false;
+      // if (!this.chosenOption) {
+      //   this.$emit("input", "");
+      // }
     }
   }
 };

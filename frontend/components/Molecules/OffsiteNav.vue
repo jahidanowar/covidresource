@@ -4,7 +4,7 @@
   >
     <ul class="container mx-auto sm:text-right mt-5 p-5">
       <li class="p-3 w-full">
-        <menu-item to="/" :title="$t('drawer.support')" type="navlink">
+        <menu-item to="https://t.me/covidWB" :title="$t('drawer.support')" type="navlink">
           <svg
             class="w-6 h-6 mr-2 sm:ml-2"
             fill="none"
@@ -22,7 +22,7 @@
         </menu-item>
       </li>
       <li class="p-3 w-full">
-        <menu-item to="/" :title="$t('drawer.contribute')" type="navlink">
+        <menu-item to="https://github.com/jahidanowar/covidresource" :title="$t('drawer.contribute')" type="navlink">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             class="w-6 h-6 mr-2 sm:ml-2"
@@ -39,7 +39,7 @@
           </svg>
         </menu-item>
       </li>
-      <li class="p-3 w-full">
+      <!-- <li class="p-3 w-full">
         <menu-item to="/" :title="$t('drawer.about')" type="navlink">
           <svg
             class="w-6 h-6 mr-2 sm:ml-2"
@@ -56,8 +56,12 @@
             ></path>
           </svg>
         </menu-item>
-      </li>
-
+      </li> -->
+      <client-only>
+        <li v-if="$store.state.auth.loggedIn" class="p-3 w-full">
+          <logout />
+        </li>
+      </client-only>
       <li class="p-3 w-full"><color-switcher /></li>
       <li class="p-3">
         <language-switcher />
@@ -68,10 +72,11 @@
 
 <script>
 import LanguageSwitcher from "../Atoms/LanguageSwitcher.vue";
+import Logout from "../Atoms/Logout.vue";
 import MenuItem from "../Atoms/MenuItem.vue";
 import ColorSwitcher from "./../Atoms/ColorSwitcher";
 export default {
-  components: { ColorSwitcher, LanguageSwitcher, MenuItem }
+  components: { ColorSwitcher, LanguageSwitcher, MenuItem, Logout }
 };
 </script>
 

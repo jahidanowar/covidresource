@@ -1,45 +1,19 @@
 export default {
   // Target: https://go.nuxtjs.dev/config-target
-  target: "server",
+  target: "static",
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
     title: "CovidResource",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { hid: "description", name: "description", content: "" }
+      {
+        hid: "description",
+        name: "description",
+        content: "A crowd-sourced platform to find verfied covid resources"
+      }
     ],
-    link: [
-      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" }
-      // {
-      //   rel: "preload",
-      //   as: "font",
-      //   type: "font/woff2",
-      //   crossorigin: true,
-      //   href: "./assets/fonts/archia/archia-regular-webfont.woff2"
-      // },
-      // {
-      //   rel: "preload",
-      //   as: "font",
-      //   type: "font/woff2",
-      //   crossorigin: true,
-      //   href: "./assets/fonts/archia/archia-medium-webfont.woff2"
-      // },
-      // {
-      //   rel: "preload",
-      //   as: "font",
-      //   type: "font/woff2",
-      //   crossorigin: true,
-      //   href: "./assets/fonts/archia/archia-semibold-webfont.woff2"
-      // },
-      // {
-      //   rel: "preload",
-      //   as: "font",
-      //   type: "font/woff2",
-      //   crossorigin: true,
-      //   href: "./assets/fonts/archia/archia-bold-webfont.woff2"
-      // }
-    ]
+    link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
@@ -52,11 +26,7 @@ export default {
   components: true,
 
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
-  buildModules: [
-    // https://go.nuxtjs.dev/tailwindcss
-    "@nuxtjs/tailwindcss",
-    "@nuxtjs/color-mode"
-  ],
+  buildModules: ["@nuxtjs/tailwindcss", "@nuxtjs/color-mode"],
 
   tailwindcss: {
     jit: true
@@ -70,27 +40,62 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     "@nuxtjs/axios",
+    "@nuxtjs/auth-next",
     // https://go.nuxtjs.dev/pwa
-    "@nuxtjs/pwa",
-    "nuxt-i18n"
+    "nuxt-i18n",
+    "@nuxtjs/pwa"
   ],
-
+  auth: {
+    strategies: {
+      local: {
+        token: {
+          property: "token"
+        },
+        user: {
+          property: "user"
+          // autoFetch: true
+        },
+        endpoints: {
+          login: { url: "/auth/login", method: "post" },
+          logout: { url: "/auth/logout", method: "post" },
+          user: { url: "/auth/user", method: "get" }
+        }
+      }
+    },
+    redirect: {
+      login: "/user/auth/login",
+      logout: "/",
+      callback: "/user/auth/login",
+      home: "/user/dashboard"
+    }
+  },
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
   axios: {
-    baseURL: "http://localhost:5000/api/v1"
+    baseURL: process.env.API_URL || "http://localhost:5000/api/v1"
   },
 
   // PWA module configuration: https://go.nuxtjs.dev/pwa
   pwa: {
+    meta: {
+      name: "CovidResources",
+      theme_color: "#10B981",
+      description: "A crowd-sourced platform to find verfied covid resources"
+    },
+    icon: {
+      fileName: "app-icon-2.png"
+    },
     manifest: {
-      lang: "en"
+      lang: "en",
+      name: "CovidResources",
+      short_name: "CovidWb"
     }
   },
 
   i18n: {
     locales: [
       { code: "en", name: "English", iso: "en-US", file: "en.js" },
-      { code: "bn", name: "বাংলা", iso: "bn", file: "bn.js" }
+      { code: "bn", name: "বাংলা", iso: "bn", file: "bn.js" },
+      { code: "hi", name: "हिंदी", iso: "hi", file: "hi.js" }
     ],
     defaultLocale: "en",
     langDir: "~/locales/"

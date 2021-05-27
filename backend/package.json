@@ -5,14 +5,20 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js"
+    "dev": "nodemon server.js",
+    "prod": "NODE_ENV=production node server.js"
   },
   "author": "Jahid Anowar",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.21.1",
+    "bcrypt": "^5.0.1",
+    "cheerio": "*",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "got": "^9.6.0",
+    "jsonwebtoken": "^8.5.1",
     "memory-cache": "^0.2.0",
     "mongoose": "^5.12.5"
   },

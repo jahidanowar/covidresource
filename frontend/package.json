@@ -1,5 +1,6 @@
 {
-  "name": "CovidResource",
+  "name": "covidresource",
+  "description": "A crowd-sourced platform to find verfied covid resources",
   "version": "1.0.0",
   "private": true,
   "scripts": {
@@ -9,9 +10,11 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/auth-next": "5.0.0-1618898588.9655d0e",
     "@nuxtjs/axios": "^5.13.1",
     "@nuxtjs/pwa": "^3.3.5",
     "core-js": "^3.9.1",
+    "dotenv": "^8.2.0",
     "moment": "^2.29.1",
     "nuxt": "^2.15.3",
     "nuxt-i18n": "^6.26.0"

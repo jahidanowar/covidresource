@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center text-sm font-semibold">
+  <div class="flex flex-col items-center text-sm">
     <template v-if="!isOpened">
       <svg
         class="w-6 h-6"
@@ -15,7 +15,7 @@
           d="M4 6h16M4 12h16M4 18h16"
         ></path>
       </svg>
-      {{ $t("appbar.menu") }}
+      <span class="hidden sm:block"> {{ $t("appbar.menu") }}</span>
     </template>
     <template v-else>
       <svg
@@ -32,7 +32,7 @@
           d="M6 18L18 6M6 6l12 12"
         ></path>
       </svg>
-      {{ $t("appbar.close") }}
+      <span class="hidden sm:block"> {{ $t("appbar.close") }}</span>
     </template>
   </div>
 </template>

@@ -1,12 +1,21 @@
 <template>
-  <nuxt-link
-    class="flex items-center"
-    :class="[type === 'navlink' ? 'flex-row sm:flex-row-reverse' : 'flex-col text-sm']"
-    :to="to"
-  >
-    <slot></slot>
-    {{ title }}
-  </nuxt-link>
+  <div>
+    <template v-if="type === 'navlink'">
+      <a class="flex items-center flex-row sm:flex-row-reverse" :href="to" target="_blank">
+        <slot></slot>
+        <span> {{ title }}</span>
+      </a>
+    </template>
+    <template v-else>
+      <nuxt-link
+        class="flex items-center flex-col text-sm"
+        :to="localePath(to)"
+      >
+        <slot></slot>
+        <span class="hidden sm:block"> {{ title }}</span>
+      </nuxt-link>
+    </template>
+  </div>
 </template>
 
 <script>
