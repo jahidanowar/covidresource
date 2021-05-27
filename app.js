@@ -4,6 +4,7 @@ const erroController = require("./controllers/erroController");
 const app = express();
 const cors = require("cors");
 const resourceRoute = require("./routes/resourceRoute");
+const userRoute = require("./routes/userRoute");
 const AppError = require("./utils/AppError");
 
 // Connect with DataBase
@@ -24,7 +25,7 @@ const AppError = require("./utils/AppError");
 
 //Cors options
 const corsOption = {
-  origin: "http://localhost:3000",
+  origin: process.env.FRONTEND_URL || "http://localhost:3000",
 };
 //Cors Middleware
 app.use(cors(corsOption));
@@ -36,6 +37,7 @@ app.use(express.json());
  * Routes Registration
  */
 app.use("/api/v1", resourceRoute);
+app.use("/api/v1/auth", userRoute);
 
 /**
  * Unknown Route
