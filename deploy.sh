@@ -6,6 +6,7 @@ set -e
 
 git subtree push --prefix backend origin backend
 
+git checkout master
 git checkout production
 git merge master
 
