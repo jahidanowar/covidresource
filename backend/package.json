@@ -6,10 +6,14 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
-    "prod": "NODE_ENV=production node server.js"
+    "prod": "NODE_ENV=production node server.js",
+    "start": "NODE_ENV=production node server.js"
   },
   "author": "Jahid Anowar",
   "license": "MIT",
+  "engines": {
+    "node": "14.x"
+  },
   "dependencies": {
     "axios": "^0.21.1",
     "bcrypt": "^5.0.1",
