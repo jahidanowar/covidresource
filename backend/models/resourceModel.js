@@ -13,11 +13,11 @@ const resourceSchema = new Schema({
   },
   phone: {
     type: Array,
-    required: [true, "Phone is required"]
+    required: [true, "Phone is required"],
   },
   link: {
     type: String,
-    required: [true, "Source link is required"]
+    required: [true, "Source link is required"],
   },
   state: {
     type: String,
@@ -62,5 +62,7 @@ const resourceSchema = new Schema({
   },
 });
 resourceSchema.index({ location: "2dsphere" });
+resourceSchema.index({ state: 1 });
+resourceSchema.index({ district: 1 });
 
 module.exports = mongoose.model("Resource", resourceSchema);
